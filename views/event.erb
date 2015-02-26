@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>
+    ATT Mobile - Chat functionality Testing (Madhur)
+  </title>
+  <meta name="viewport" content="user-scalable=0, width=device-width, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0">
+  <script type="text/javascript" src="/js/mebf.js"></script>
+  <script type="text/javascript" src="/js/jquery.js"></script>
+
+  <style>
+  .online{
+    background: #ccc url('online.png') no-repeat right;
+    padding-right:20px;
+  }
+
+  .offline{
+    background: #ccc url('offline.png') no-repeat right;
+    padding-right:20px;
+  }
+  div{
+    margin:5px;
+    padding:5px;
+  }
+  </style>
+
+</head>
+
+<body>
+  <form>
+    <div><input type="button" id="" class="online" value="Live Person" onclick="LPMobile.beginChat()"></div>
+
+    <div>Please star the chat and select the approach before proceeding-</div>
+
+    <fieldset>
+      <input type="radio" name="approach" value="approach1" checked>Approach 1 with for each Loop to fire reportEvents on set of checkboxes.<br><br>
+      <input type="radio" name="approach" value="approach2">Approach 2 without for each Loop to fire reportEvent for each checked box.
+    </fieldset>
+    <br>
+    <li><input type="checkbox" value="1" onClick="syncWithLP(this)"><span>Checkbox 1</span></li>
+    <li><input type="checkbox" value="2" onClick="syncWithLP(this)"><span>Checkbox 2</span></li>
+    <li><input type="checkbox" value="3" onClick="syncWithLP(this)"><span>Checkbox 3</span></li>
+    <li><input type="checkbox" value="4" onClick="syncWithLP(this)"><span>Checkbox 4</span></li>
+    <li><input type="checkbox" value="5" onClick="syncWithLP(this)"><span>Checkbox 5</span></li>
+    <li><input type="checkbox" value="6" onClick="syncWithLP(this)"><span>Checkbox 6</span></li>
+    <li><input type="checkbox" value="7" onClick="syncWithLP(this)"><span>Checkbox 7</span></li>
+  </form>
+  <br>
+  <div>Quickly click through the checkboxes. LPMobile.reportEvent is fired but the LPAC will not reflect correct values ie. checkbox is checed on the site but is not reproted as checked in LPAC </div>
+  <br>
+  <div>Use custom app id to reproduce issues by using the URL https://safe-cliffs-3429.herokuapp.com/event/ACCOUNTID ex. https://safe-cliffs-3429.herokuapp.com/event/P36511428</div>
+  <script type="text/javascript">
+  var _LP_CFG_ = {
+    app_id:
+    <% if @appId %>
+    '<%= @appId %>',
+    <% else %>
+    'P36511428',
+    <% end %>
+    log_level: 0,
+    options: {
+      onReady: window.onReady,
+      extras :function(){
+        var extras={"Data1":"Value1","Data2":"Value2"};
+        return extras;
+    }
+
+    }
+  };
+  (function() {
+    var a = _LP_CFG_.lpjsid = "lpjs-" + (new Date).getTime(),
+    b = document.createElement("script"),
+    s = document.getElementsByTagName("script")[0];
+    b.id = a;
+    b.type = "text/javascript";
+    b.async = true;
+    b.src = 'https://d3tpuxked45kzt.cloudfront.net/lp_lib/liveperson-mobile.js';
+    s.parentNode.insertBefore(b, s);
+  })();
+  </script>
+
+</body>
+
+</html>

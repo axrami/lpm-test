@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Automation</title>
+  <meta name='viewport' content='user-scalable=0, width=device-width, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0'>
+  <link rel="stylesheet" href="/css/demo.css" />
+  <link rel="stylesheet" href="/css/automation.css" />
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/jquery.fullPage.css" />
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/jquery.fullPage.min.js"></script>
+  <script src="/js/automation.js"></script>
+</head>
+<body>
+  <div id="body-wrappger">
+    <div id="nav" class="navbar" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#" data-toggle="collapse" data-target="#demo">
+            LPMobile-US
+          </a>
+        </div>
+      </div>
+    </div>
+    <div id="demo" class="collapse">
+      <div class="jumbotron">
+        <center><h1>Talk to us!</h1></center>
+        <button tyep="button" class="btn btn-primary btn-block chat-btn">Live Chat!</button>
+      </div>
+    </div>
+  </div>
+
+<div id="fullpage">
+  <div class="section">
+    <div id="slide0" class="slide i">
+      <div id="list-container" class="container-fluid">
+        <div class="row" id="iOS-platform">
+          <div class="col-xs-11 name">iOS Automation</div>
+        </div>
+          <div class="row" id="iOS-platform">
+            <div class="col-xs-11 name">Android Automation (Under Development)</div>
+          </div>
+      </div>
+    </div>
+    <div id="slide1" class="slide">
+      <div class="container-fluid">
+        <div id="slide1-content">
+          <h3>iOS Automation</h3>
+          <h5>Select applcation</h5>
+          <div id= "app-selector" class="btn-group btn-group-justified" role="group">
+            <a href="#" id="sdk-btn" class="btn btn-default" role="button" data-toggle="collapse" data-target="#sdk-jumbo">SDK</a>
+            <a href="#" id="brand-btn" class="btn btn-default disabled" role="button">Brand/Agent App</a>
+            <a href="#" id="demo-btn" class="btn btn-default disabled" role="button">Demo App</a>
+          </div>
+          <div id="sdk-jumbo" class="collapse">
+            <div class="jumbotron">
+              <h4>Test configuration<h4>
+              <div id="sdk-drp" class="dropdown">
+                <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown">
+                  Select Test Case
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <li role="presentation"><a role="menuitem" class="test-sel" id="test" data="test.rb" herf="#">Test</a></li>
+                  <li role="presentation"><a role="menuitem" class="test-sel" id="all-test" data="test.rb" herf="#">All Test</a></li>
+                </ul>
+              </div>
+              <div id="selection-wrper"></div>
+              <button id="sdk-run-test"class="btn btn-primary btn-block btn-lg rn-tst" data-toggle="modal" data-target="#test-confirmation" >Run test!</button>
+            </div>
+            </div>
+              <div class="row" id="back-btn-wrapper">
+                <div class="col-xs-12 name back-btn">Back</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="test-confirmation" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Testing has begun</h4>
+        </div>
+        <div class="modal-body">
+          <p>To see test results visit</p>
+          <p><a href='https://saucelabs.com/' target="_blank">SauceLabs</a></p>
+          <p>User: ramirez.andrew@gmail.com</p>
+          <p>Pass: 515285</p>
+          <p><b>*Pressing Run Test! again will start multiple instances*</b></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
