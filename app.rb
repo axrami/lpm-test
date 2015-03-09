@@ -23,7 +23,7 @@ get '/event/?:app_id?' do
   erb :event
 end
 
-get '/le/?:app_id?' do
+get '/leTagProd/?:app_id?' do
   @appId = params[:app_id] || nil
   erb :le
 end
