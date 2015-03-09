@@ -42,8 +42,8 @@ $(document).ready(function() {
     if (testName == undefined) {
       alert('provide test...')
     } else {
-      // $.get('http://localhost:4567/rake/iOS');
-      $.get('http://mysterious-garden-8974.herokuapp.com/rake/iOS');
+      $.get('http://localhost:4567/rake/iOS');
+      // $.get('http://mysterious-garden-8974.herokuapp.com/rake/iOS');
     }
   }
 

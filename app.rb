@@ -24,7 +24,6 @@ get '/event/?:app_id?' do
 end
 
 get '/le/?:app_id?' do
-  @le = 1
   @appId = params[:app_id] || nil
   erb :le
 end
