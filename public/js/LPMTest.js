@@ -60,7 +60,7 @@
     };
 
     var hybrid = function() {
-        getHybrid()
+        getHybrid();
         var hybrid = localStorage.getItem('hybrid');
         if (hybrid == '1') {
             window._LPM_HYBRID_ENABLED_ = true;
@@ -301,6 +301,12 @@
         version = LPMobile.version;
         $('.navbar-brand').append(version);
     };
+
+    LPMTest.setInvitationShown = function() {
+        LPMobile.setInvitationShown();
+        console.log('invitation shown..');
+    };
+
 
     var init = function() {
         metaView();
