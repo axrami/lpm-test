@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c72722e5-7894-4d42-963b-4b8812bedae5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/LPMTest.js" afterPath="$PROJECT_DIR$/public/js/LPMTest.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="lpm-test.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,8 +50,8 @@
       <file leaf-file-name="LPMTest.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/LPMTest.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.70842826" vertical-offset="4088" max-vertical-offset="4980">
-              <caret line="314" column="17" selection-start-line="314" selection-start-column="17" selection-end-line="314" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.16173121" vertical-offset="503" max-vertical-offset="5010">
+              <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -666,12 +665,12 @@
       <workItem from="1426794852645" duration="183000" />
       <workItem from="1426795134916" duration="3014000" />
       <workItem from="1427127890976" duration="431000" />
-      <workItem from="1427731678548" duration="2509000" />
+      <workItem from="1427731678548" duration="3871000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12872000" />
+    <option name="totallyTimeSpent" value="14234000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -866,8 +865,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/LPMTest.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.70842826" vertical-offset="4088" max-vertical-offset="4980">
-          <caret line="314" column="17" selection-start-line="314" selection-start-column="17" selection-end-line="314" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.16173121" vertical-offset="503" max-vertical-offset="5010">
+          <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
           <folding />
         </state>
       </provider>

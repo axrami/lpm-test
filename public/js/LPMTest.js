@@ -42,7 +42,9 @@
         getMeta();
         var meta = localStorage.getItem('meta');
         if (meta == '1') {
-            $("head").append("<meta name='viewport' content='user-scalable=1, width=device-width, initial-scale=1.0'>");
+            //$("head").append("<meta name='viewport' content='user-scalable=1, width=device-width, initial-scale=1.0'>");
+            // lp viewport
+            $("head").append("<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no'>");
             console.log("user-scalable=1, width=device-width, initial-scale=1.0");
         } else {
             $("head").append("<meta name='viewport' content='user-scalable=0, width=device-width, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0'>");
