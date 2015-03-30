@@ -40,8 +40,8 @@
       <file leaf-file-name="index.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/index.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.11918275" vertical-offset="0" max-vertical-offset="2160">
-              <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.18728717" vertical-offset="0" max-vertical-offset="2160">
+              <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -714,12 +714,12 @@
       <workItem from="1426794852645" duration="183000" />
       <workItem from="1426795134916" duration="3014000" />
       <workItem from="1427127890976" duration="431000" />
-      <workItem from="1427731678548" duration="4475000" />
+      <workItem from="1427731678548" duration="4939000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14838000" />
+    <option name="totallyTimeSpent" value="15302000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -946,8 +946,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/index.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11918275" vertical-offset="0" max-vertical-offset="2160">
-          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.18728717" vertical-offset="0" max-vertical-offset="2160">
+          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
           <folding />
         </state>
       </provider>
