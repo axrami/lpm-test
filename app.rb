@@ -66,6 +66,8 @@ def url_by_env env
     'https://tag.look.io/lp_lib/liveperson-mobile.js'
   elsif env == 'qa'
     'https://s3.amazonaws.com/lp-qa-html-lib/lp_lib/liveperson-mobile.js'
+  elsif env == 'dev'
+    'https://s3.amazonaws.com/look-test-html-lib/lp_lib/liveperson-mobile.js'
   else
     'https://d3tpuxked45kzt.cloudfront.net/lp_lib/liveperson-mobile.js'
   end
