@@ -3,15 +3,8 @@ require_relative 'sso.rb'
 require 'json'
 require 'pp'
 
-mobile_regex = /iPhone|iPad|Android/
-
 get '/' do
-  matches_mobile = request.env["HTTP_USER_AGENT"] =~ mobile_regex
-  if matches_mobile.is_a?(Integer)
-    erb :home
-  else
-    erb :home
-  end
+  erb :home
 end
 
 get '/automation' do
@@ -23,9 +16,14 @@ get '/event/?:app_id?' do
   erb :event
 end
 
-get '/leTagProd/?:app_id?' do
+get '/le/?:app_id?' do
   @appId = params[:app_id] || nil
-  erb :le
+  if is_mobile
+    erb :le
+  else
+    @desktop = true
+    erb :le
+  end
 end
 
 get '/apk' do
@@ -69,17 +67,31 @@ def url_by_env env
   elsif env == 'dev'
     'https://s3.amazonaws.com/look-test-html-lib/lp_lib/liveperson-mobile.js'
   else
-    'https://d3tpuxked45kzt.cloudfront.net/lp_lib/liveperson-mobile.js'
+    return nil
   end
+end
+
+def is_mobile
+  mobile_regex = /iPhone|iPad|Android/
+  matches_mobile = request.env["HTTP_USER_AGENT"] =~ mobile_regex
+  if matches_mobile.is_a?(Integer)
+    return true
+  else
+    return false
+  end
+
 end
 
 get '/:env/?:app_id?' do
   @appId = params[:app_id] || nil
   @link = url_by_env params[:env]
-  matches_mobile = request.env["HTTP_USER_AGENT"] =~ mobile_regex
-  if matches_mobile.is_a?(Integer)
+  if is_mobile and @link != nil
+    erb :index
+  elsif @link != nil
+    @desktop = true
     erb :index
   else
-    erb :index
+    erb :not_found
   end
+
 end

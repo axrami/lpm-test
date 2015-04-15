@@ -12,6 +12,10 @@
   <script src="/js/LPMTest.js"></script>
   <script src="/js/lp_debugger.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+    <% if @desktop %>
+        <% padding = "<style> .home-page {padding-left: 400px; padding-right: 400px;} </style>" %>
+        <%= padding %>
+    <% end %>
 </head>
 
 <body>

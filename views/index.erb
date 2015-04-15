@@ -11,6 +11,10 @@
   <script src="/js/jquery.js"></script>
   <script src="/js/LPMTest.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+  <% if @desktop %>
+    <% padding = "<style> .home-page {padding-left: 400px; padding-right: 400px;} </style>" %>
+    <%= padding %>
+  <% end %>
 </head>
 
 <body>
@@ -28,11 +32,6 @@
     <div class="jumbotron">
       <ul class="settings-wrapper">
         <li>
-<!--           <a href="http://safe-cliffs-3429.herokuapp.com/demo">
-            <button class="btn btn-default btn-block">
-              Demo
-            </button>
-          </a> -->
         </li>
       </ul>
     </div>
