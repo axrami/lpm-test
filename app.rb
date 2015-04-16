@@ -16,6 +16,10 @@ get '/event/?:app_id?' do
   erb :event
 end
 
+get 'alpha' do
+  erb :alphatest
+end
+
 get '/le/?:app_id?' do
   @appId = params[:app_id] || nil
   if is_mobile
