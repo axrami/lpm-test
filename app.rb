@@ -7,6 +7,10 @@ get '/' do
   erb :home
 end
 
+get '/alpha' do
+  erb :alphatest
+end
+
 get '/automation' do
   erb :automation
 end
@@ -14,10 +18,6 @@ end
 get '/event/?:app_id?' do
   @appId = params[:app_id] || nil
   erb :event
-end
-
-get 'alpha' do
-  erb :alphatest
 end
 
 get '/le/?:app_id?' do
