@@ -2,16 +2,16 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>Test Site</title>
-  <link rel="stylesheet" type="text/css" href="/css/app.css" />
-  <link rel="stylesheet" href="/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/css/my.css" />
-  <link rel="stylesheet" href="/css/demo.css" />
-  <script src="/js/jquery.js"></script>
-  <script src="/js/LPMTest.js"></script>
-  <script src="/js/lp_debugger.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <title>Test Site</title>
+    <link rel="stylesheet" type="text/css" href="/css/app.css"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/my.css"/>
+    <link rel="stylesheet" href="/css/demo.css"/>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/LPMTest.js"></script>
+    <script src="/js/lp_debugger.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
     <% if @desktop %>
         <% padding = "<style> .home-page {padding-left: 400px; padding-right: 400px;} </style>" %>
         <%= padding %>
@@ -19,192 +19,184 @@
 </head>
 
 <body>
-  <div class="body-wrapper">
-  <nav id="nav" class="navbar" role="navigation">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#" data-toggle="collapse" data-target="#demo">
-          LPMobile
-        </a>
-      </div>
-    </div>
-  </nav>
-
-  <div class="home-page app">
-
-    <div id="slider" class="report-menu-slider hidden"><ul></ul></div>
-
-      <div id="ul-wrapper">
-      </div>
-      <div id="settings-wrapper" class="settings-wrapper">
-        <h4>Settings</h4>
-        <ul>
-          <li><button class="btn btn-default btn-block chat-btn">Chat now!</button></li>
-          <li><button id="tog-meta" class="btn btn-default btn-block">Toggle viewport</button></li>
-          <li><button id="view-port-size" class="btn btn-default btn-block">Viewport Size</button></li>
-          <li><button id="enable" class="btn btn-default btn-block" onclick="LPMTest.lpDisabled()">Chat Enable/Disable</button></li>
-          <li><button id="report-btn" class="btn btn-default btn-block">report event</button></li>
-          <li><button id="progress" class="btn btn-default btn-block">Chat in Progress</button></li>
-          <!-- <li><button id="extras" class="btn btn-default btn-block">Report extras</button></li> -->
-          <li><button id="invitation" class="btn btn-default btn-block">Report invitation</button></li>
-          <li><button id="def-skill" class="btn btn-default btn-block">Set Default skill</button></li>
-          <li><button id="tog-hybrid" class="btn btn-default btn-block">Toggle Hybrid var</li>
-          <li><button id="lang-override" class="btn btn-default btn-block">Override Language</li>
-          <li>
-            <div class="btn-group btn-group">
-              <button type="button" onclick="LPMTest.httpLink()" class="btn btn-default">HTTP</button>
-              <button type="button" onclick="LPMTest.httpsLink()" class="btn btn-default">HTTPS</button>
+<div class="body-wrapper">
+    <nav id="nav" class="navbar" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#" data-toggle="collapse" data-target="#demo">
+                    LPMobile
+                </a>
             </div>
-          </li>
-        </ul>
-      </div>
-  </div>
-  <script type="text/javascript">
-    var _LP_CFG_ = {
-    app_id:
-      <% if @appId %>
-        '<%= @appId %>',
-      <% else %>
-        'P36511428',
-      <% end %>
-    log_level: 1,
-    options: {
-        triggerSelector: '.chat-btn',
-        language: LPMTest.setLang(),
-        chatDisabled: false,
-        onReady: function() {
-            LPMobile.on('enabledChange', function(data) {
-                LPMTest.buildPage(data);
-                console.log(data);
-            });
-            LPMTest.events.forEach(function(evt) {
-                LPMobile.on(evt, function() {
-                    LPMTest.logEvent(evt);
-                });
-            });
-            LPMTest.version();
-        },
-        onChatDisabled: function(els) { // An event that fires when chat is disabled. It takes one parameter which is an array of your trigger selectors.
-            for (var i = 0; i < els.length; i++) {
-                els[i].style.opacity = .1;
-            }
-            LPMTest.logEvent('oldChatDisabled');
-        },
-        onChatEnabled: function(els) { // An event that fires when chat is enabled. It takes one parameter which is an array of your trigger selectors.
-            for (var i = 0; i < els.length; i++) {
-                els[i].style.opacity = 1;
-            }
-            LPMTest.logEvent('oldChatEnabled');
-        },
+        </div>
+    </nav>
 
-        extras: function() {
-            return {
-                "time": Date.now()
+    <div class="home-page app">
+
+        <div id="slider" class="report-menu-slider hidden">
+            <ul></ul>
+        </div>
+
+        <div id="ul-wrapper">
+        </div>
+        <div id="settings-wrapper" class="settings-wrapper">
+            <h4>Settings</h4>
+            <ul>
+                <li>
+                    <button class="btn btn-default btn-block chat-btn">Chat now!</button>
+                </li>
+                <li>
+                    <button id="tog-meta" class="btn btn-default btn-block">Toggle viewport</button>
+                </li>
+                <li>
+                    <button id="view-port-size" class="btn btn-default btn-block">Viewport Size</button>
+                </li>
+                <li>
+                    <button id="enable" class="btn btn-default btn-block" onclick="LPMTest.lpDisabled()">Chat
+                        Enable/Disable
+                    </button>
+                </li>
+                <li>
+                    <button id="report-btn" class="btn btn-default btn-block">report event</button>
+                </li>
+                <li>
+                    <button id="progress" class="btn btn-default btn-block">Chat in Progress</button>
+                </li>
+                <!-- <li><button id="extras" class="btn btn-default btn-block">Report extras</button></li> -->
+                <li>
+                    <button id="invitation" class="btn btn-default btn-block">Report invitation</button>
+                </li>
+                <li>
+                    <button id="def-skill" class="btn btn-default btn-block">Set Default skill</button>
+                </li>
+                <li>
+                    <button id="tog-hybrid" class="btn btn-default btn-block">Toggle Hybrid var
+                </li>
+                <li>
+                    <button id="lang-override" class="btn btn-default btn-block">Override Language
+                </li>
+                <li>
+                    <div class="btn-group btn-group">
+                        <button type="button" onclick="LPMTest.httpLink()" class="btn btn-default">HTTP</button>
+                        <button type="button" onclick="LPMTest.httpsLink()" class="btn btn-default">HTTPS</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var _LP_CFG_ = {
+            app_id: <% if @appId %>
+                    '<%= @appId %>',
+            <% else %>
+            'P36511428',
+            <% end %>
+            log_level: 1,
+            options: {
+                triggerSelector: '.chat-btn',
+                language: LPMTest.setLang(),
+                chatDisabled: false,
+                onReady: function () {
+                    LPMobile.on('enabledChange', function (data) {
+                        LPMTest.buildPage(data);
+                        console.log(data);
+                    });
+                    LPMTest.events.forEach(function (evt) {
+                        LPMobile.on(evt, function () {
+                            LPMTest.logEvent(evt);
+                        });
+                    });
+                    LPMTest.version();
+                },
+                onChatDisabled: function (els) { // An event that fires when chat is disabled. It takes one parameter which is an array of your trigger selectors.
+                    for (var i = 0; i < els.length; i++) {
+                        els[i].style.opacity = .1;
+                    }
+                    LPMTest.logEvent('oldChatDisabled');
+                },
+                onChatEnabled: function (els) { // An event that fires when chat is enabled. It takes one parameter which is an array of your trigger selectors.
+                    for (var i = 0; i < els.length; i++) {
+                        els[i].style.opacity = 1;
+                    }
+                    LPMTest.logEvent('oldChatEnabled');
+                },
+
+                extras: function () {
+                    return {
+                        "time": Date.now()
+                    }
+
+                }
             }
 
-        }
-    }
+        };
 
-};
+        window.lpTag = window.lpTag || {};
+        lpTag.taglets = lpTag.taglets || {};
+        window.lpTag.taglets.unifiedmonitor = window.lpTag.taglets.unifiedmonitor || function () {
+            function init(a) {
+                convertConfig(a, config);
+                config.lookioDomain = config.lookioDomain || "d3tpuxked45kzt.cloudfront.net";
+                config.lookioUrl = "https://" + config.lookioDomain + "/lp_lib/liveperson-mobile.js"
+            }
 
-window.lpTag = window.lpTag || {};
-if (typeof window.lpTag._tagCount === 'undefined') {
-    window.lpTag = {
-        site: '2471278',
-        section: lpTag.section || '',
-        autoStart: lpTag.autoStart === false ? false : true,
-        ovr: lpTag.ovr || {},
-        _v: '1.5.1',
-        _tagCount: 1,
-        protocol: location.protocol,
-        events: {
-            bind: function(app, ev, fn) {
-                lpTag.defer(function() {
-                    lpTag.events.bind(app, ev, fn)
-                }, 0)
-            },
-            trigger: function(app, ev, json) {
-                lpTag.defer(function() {
-                    lpTag.events.trigger(app, ev, json)
-                }, 1)
+            function start() {
+                var a = navigator.userAgent;
+                if (a.match(_regex.ios) || a.match(_regex.android)) {
+                    "undefined" == typeof window._LP_CFG_ && (window._LP_CFG_ = {});
+                    "undefined" == typeof window._LP_CFG_.app_id && (window._LP_CFG_.app_id = lpTag.site);
+                    window._LP_CFG_.tagletConf = config;
+                    window.lpAddMobileTag = function () {
+                        var a = document.createElement("script");
+                        _LP_CFG_.lpjsid = a.id = "lpmobile-js-tag";
+                        a.type = "text/javascript";
+                        a.async = !0;
+                        a.src = config.lookioUrl;
+                        document.body.appendChild(a)
+                    };
+                    lpTag.isDom ? lpAddMobileTag() : lpTag.events.bind("LPT", "DOM_READY", lpAddMobileTag)
+                } else {
+                    "undefined" == typeof lpMTagConfig && (window.lpMTagConfig = {});
+                    lpMTagConfig.lpServer = lpTag.getDomain("LPMONITOR");
+                    lpMTagConfig.lpNumber = lpTag.site;
+                    lpMTagConfig.lpProtocol = lpTag.protocol.replace(":", "");
+                    window.lpAddMonitorTag = function (a) {
+                        if ("undefined" == typeof a || "object" == typeof a)if ("undefined" == typeof lpMTagConfig.pluginSys || lpMTagConfig.pluginsLoaded)a = lpMTagConfig.lpMTagSrc ? lpMTagConfig.lpMTagSrc : "/hcp/html/mTag.js"; else {
+                            a = lpMTagConfig.pluginSys;
+                            lpMTagConfig.pluginsLoaded = !0
+                        }
+                        if (0 != a.indexOf("http"))a = lpMTagConfig.lpProtocol + "://" + lpMTagConfig.lpServer + a + "?site=" + lpMTagConfig.lpNumber; else if (a.indexOf("site=") < 0) {
+                            a += a.indexOf("?") < 0 ? "?" : "&";
+                            a = a + "site=" + lpMTagConfig.lpNumber
+                        }
+                        lpTag.load(a, "iso-8859-1")
+                    };
+                    lpTag.isDom ? lpAddMonitorTag() : lpTag.events.bind("LPT", "DOM_READY", lpAddMonitorTag)
+                }
             }
-        },
-        defer: function(fn, fnType) {
-            if (fnType == 0) {
-                this._defB = this._defB || [];
-                this._defB.push(fn)
-            } else if (fnType == 1) {
-                this._defT = this._defT || [];
-                this._defT.push(fn)
-            } else {
-                this._defL = this._defL || [];
-                this._defL.push(fn)
-            }
-        },
-        load: function(src, chr, id) {
-            var t = this;
-            setTimeout(function() {
-                t._load(src, chr, id)
-            }, 0)
-        },
-        _load: function(src, chr, id) {
-            var url = src;
-            if (!src) {
-                url = this.protocol + '//' + ((this.ovr && this.ovr.domain) ? this.ovr.domain : 'lptag.liveperson.net') + '/tag/tag.js?site=' + this.site
-            }
-            var s = document.createElement('script');
-            s.setAttribute('charset', chr ? chr : 'UTF-8');
-            if (id) {
-                s.setAttribute('id', id)
-            }
-            s.setAttribute('src', url);
-            document.getElementsByTagName('head').item(0).appendChild(s)
-        },
-        init: function() {
-            this._timing = this._timing || {};
-            this._timing.start = (new Date()).getTime();
-            var that = this;
-            if (window.attachEvent) {
-                window.attachEvent('onload', function() {
-                    that._domReady('domReady')
-                })
-            } else {
-                window.addEventListener('DOMContentLoaded', function() {
-                    that._domReady('contReady')
-                }, false);
-                window.addEventListener('load', function() {
-                    that._domReady('domReady')
-                }, false)
-            }
-            if (typeof(window._lptStop) == 'undefined') {
-                this.load()
-            }
-        },
-        start: function() {
-            this.autoStart = true
-        },
-        _domReady: function(n) {
-            if (!this.isDom) {
-                this.isDom = true;
-                this.events.trigger('LPT', 'DOM_READY', {
-                    t: n
-                })
-            }
-            this._timing[n] = (new Date()).getTime()
-        },
-        vars: lpTag.vars || [],
-        dbs: lpTag.dbs || [],
-        ctn: lpTag.ctn || [],
-        sdes: lpTag.sdes || [],
-        ev: lpTag.ev || []
-    };
-    lpTag.init()
-} else {
-    window.lpTag._tagCount += 1
-}
-  </script>
 
-  </div>
+            function convertConfig(conf, _config) {
+                if ("undefined" != typeof _config) {
+                    if (conf)for (var i = 0; i < conf.length; i++) {
+                        var val = conf[i].value;
+                        if ("string" == typeof val && "" != val)if ("true" === val)val = !0; else if ("false" === val)val = !1; else if ("[" == val.charAt(0) || "{" == val.charAt(0))try {
+                            val = "undefined" != typeof JSON && JSON.parse ? JSON.parse(val) : eval("(" + val + ")")
+                        } catch (e) {
+                            lpTag.log("unable to parse JSON:" + e, "ERROR", _name)
+                        }
+                        _config[conf[i].id] = val
+                    }
+                } else lpTag.log("_config is passed as undefined", "ERROR", _name)
+            }
+
+            var _v = 1.7, _name = "unifiedmonitor", _regex = {
+                ios: /(iPhone|iPod|iPad).*([4|5|6|7|8]_\d+(?:_\d)?)\s+/i,
+                android: /(Android)\s+((?:2\.[3-9]|4\.\d+|5\.\d+)(?:-update\d+)?(?:\.\d+)?);+/i
+            }, config = {};
+            return {v: _v, name: _name, init: init, start: start}
+        }();
+    </script>
+
+</div>
 </body>
 
 </html>
