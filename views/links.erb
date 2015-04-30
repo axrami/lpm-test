@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Test Site</title>
+    <link rel="stylesheet" type="text/css" href="/css/app.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/my.css" />
+    <link rel="stylesheet" href="/css/demo.css" />
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <% if @desktop %>
+        <% padding = "<style> .home-page {padding-left: 400px; padding-right: 400px;} </style>" %>
+        <%= padding %>
+    <% end %>
+</head>
+
+<body>
+<div class="body-wrapper">
+    <nav id="nav" class="navbar" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#" data-toggle="collapse" data-target="#demo">
+                    LPMobile
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div id="demo" class="collapse">
+        <div class="jumbotron">
+            <ul class="settings-wrapper">
+                <li>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="home-page app">
+
+        <div id="slider" class="report-menu-slider hidden"><ul></ul></div>
+
+        <div id="ul-wrapper">
+        </div>
+        <div id="settings-wrapper" class="settings-wrapper">
+            <h4>Settings</h4>
+            <ul>
+                <li><button class="btn btn-default btn-block chat-btn">Chat now!</button></li>
+                <li><button id="tog-meta" class="btn btn-default btn-block">Toggle viewport</button></li>
+                <li><button id="view-port-size" class="btn btn-default btn-block">Viewport Size</button></li>
+                <li><button id="enable" class="btn btn-default btn-block" onclick="LPMTest.lpDisabled()">Chat Enable/Disable</button></li>
+                <li><button id="report-btn" class="btn btn-default btn-block">report event</button></li>
+                <li><button id="progress" class="btn btn-default btn-block">Chat in Progress</button></li>
+                <!-- <li><button id="extras" class="btn btn-default btn-block">Report extras</button></li> -->
+                <li><button id="invitation" class="btn btn-default btn-block">Report invitation</button></li>
+                <li><button id="def-skill" class="btn btn-default btn-block">Set Default skill</button></li>
+                <li><button id="tog-hybrid" class="btn btn-default btn-block">Toggle Hybrid var</li>
+                <li><button id="lang-override" class="btn btn-default btn-block">Override Language</li>
+                <li>
+                    <div class="btn-group btn-group">
+                        <button type="button" onclick="LPMTest.httpLink()" class="btn btn-default">HTTP</button>
+                        <button type="button" onclick="LPMTest.httpsLink()" class="btn btn-default">HTTPS</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

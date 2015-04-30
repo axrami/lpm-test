@@ -3,12 +3,21 @@ require_relative 'sso.rb'
 require 'json'
 require 'pp'
 
+post '/' do
+  puts 'post received' * 10
+end
+
+
 get '/' do
   erb :home
 end
 
 get '/alpha' do
   erb :alphatest
+end
+
+get '/var' do
+  erb :var
 end
 
 get '/automation' do
