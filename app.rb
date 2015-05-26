@@ -20,6 +20,10 @@ get '/var' do
   erb :var
 end
 
+get '/webconnect' do
+  erb :webconnect
+end
+
 get '/automation' do
   erb :automation
 end
