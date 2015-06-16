@@ -2,6 +2,7 @@ require 'sinatra'
 require_relative 'sso.rb'
 require 'json'
 require 'pp'
+require 'net/http'
 
 post '/' do
   puts 'post received' * 10
@@ -45,6 +46,20 @@ end
 
 get '/apk' do
   erb :apk
+end
+
+get '/pugbomb' do
+  url = URI.parse('http://pugme.herokuapp.com/bomb?count=5');
+  req = Net::HTTP::Get.new(url.to_s)
+  res = Net::HTTP.start(url.host, url.port) {|http|
+    http.request(req)
+  }
+
+  pugs = JSON.parse(res.body)
+  pugs["pugs"].each do |x|
+    return x
+    puts x
+  end
 end
 
 get '/demo' do
