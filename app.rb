@@ -55,13 +55,17 @@ get '/pug' do
     http.request(req)
   }
   pugs = JSON.parse(res.body)
-  pug_image = pugs["pugs"]
+  pugLink = pugs["pugs"]
+  sendPugs pugLink
 
-  slackURL = URI.parse("https://hooks.slack.com/services/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")
-  http = Net::HTTP.new(slackURL.host , slackURL.port)
+end
+
+def sendPugs pug
+  url = URI.parse("https://hooks.slack.com/services/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")
+  http = Net::HTTP.new(uri.host , uri.port)
   http.use_ssl = true
-  request = Net::HTTP::Post.new(slackURL.path , {'Content-type' => 'application/json'})
-  request.body = "{'text': #{pugs}}"
+  request = Net::HTTP::Post.new(uri.path , {'Content-type' => 'application/json'})
+  request.body = "{'text': #{pug}}"
   response = http.request(request)
   puts response
 
