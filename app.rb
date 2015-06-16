@@ -54,10 +54,17 @@ get '/pug' do
   res = Net::HTTP.start(url.host, url.port) {|http|
     http.request(req)
   }
-
   pugs = JSON.parse(res.body)
+  pug_image = pugs["pugs"]
 
-  return pugs["pugs"]
+  slackURL = URI.parse("https://hooks.slack.com/services/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")
+  http = Net::HTTP.new(slackURL.host , slackURL.port)
+  http.use_ssl = true
+  request = Net::HTTP::Post.new(slackURL.path , {'Content-type' => 'application/json'})
+  request.body = "{'text': #{pugs}}"
+  response = http.request(request)
+  puts response
+
 end
 
 get '/demo' do
