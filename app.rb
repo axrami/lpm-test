@@ -67,8 +67,7 @@ def sendPugs pug
   http.use_ssl = true
   request = Net::HTTP::Post.new(uri.path , {'Content-type' => 'application/json'})
   request.body = "{'text': #{pug}}"
-  response = http.request(request)
-  puts response
+  http.request(request)
 
 end
 
