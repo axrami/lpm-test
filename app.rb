@@ -70,6 +70,11 @@ get '/sso/validatekey' do
   Sso.validatekey ssoKey
 end
 
+get '/hello' do
+  @name = params[:user_name]
+  return "hello #{@name}"
+end
+
 def url_by_env env
   if env == 'staging'
     'https://s3.amazonaws.com/look-dev-html-lib/lp_lib/liveperson-mobile.js'
