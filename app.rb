@@ -3,6 +3,7 @@ require_relative 'sso.rb'
 require 'json'
 require 'pp'
 require 'net/http'
+require 'uri'
 
 post '/' do
   puts 'post received' * 10
@@ -61,7 +62,7 @@ get '/pug' do
 end
 
 def sendPugs pug
-  url = URI.parse("https://hooks.slack.com/services/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")
+  uri = URI.parse("https://hooks.slack.com/services/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")
   http = Net::HTTP.new(uri.host , uri.port)
   http.use_ssl = true
   request = Net::HTTP::Post.new(uri.path , {'Content-type' => 'application/json'})
