@@ -70,7 +70,7 @@ get '/sso/validatekey' do
   Sso.validatekey ssoKey
 end
 
-get '/hello' do
+post '/hello' do
   @name = params[:user_name]
   return "hello #{@name}"
 end
