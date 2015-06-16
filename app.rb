@@ -48,18 +48,16 @@ get '/apk' do
   erb :apk
 end
 
-get '/pugbomb' do
-  url = URI.parse('http://pugme.herokuapp.com/bomb?count=5');
+get '/pug' do
+  url = URI.parse('http://pugme.herokuapp.com/bomb?count=1');
   req = Net::HTTP::Get.new(url.to_s)
   res = Net::HTTP.start(url.host, url.port) {|http|
     http.request(req)
   }
 
   pugs = JSON.parse(res.body)
-  pugs["pugs"].each do |x|
-    return x
-    puts x
-  end
+
+  return pugs["pugs"]
 end
 
 get '/demo' do
