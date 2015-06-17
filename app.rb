@@ -1,5 +1,6 @@
 require 'sinatra'
 require_relative 'sso.rb'
+require_relative 'visit.rb'
 require 'json'
 require 'pp'
 require 'net/http'
@@ -70,6 +71,11 @@ def sendPugs pug
   http.request(request)
 
 end
+
+get '/visits' do
+  return VisitReporter.tryAccount
+end
+
 
 get '/demo' do
   erb :demo
