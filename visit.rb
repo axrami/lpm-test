@@ -7,23 +7,54 @@ require 'uri'
 
 class VisitReporter
 
-  def self.tryAccount
-    uri = URI("https://stats.look.io/render/?width=586&height=308&_salt=1434573508.173&from=00%3A00_20150501&until=23%3A59_20150531&target=stats_counts.property.Web.0363eef2.funnel.1&format=json")
+  def self.getAccounts
 
-    Net::HTTP.start(uri.host, uri.port,
-                    :use_ssl => uri.scheme == 'https',
-                    :verify_mode => OpenSSL::SSL::VERIFY_NONE) do |http|
+      uri = URI("https://stats.look.io/render/?width=586&height=308&_salt=1434573508.173&from=00%3A00_20150501&until=23%3A59_20150531&target=stats_counts.property.Web.*.funnel.1&format=json")
+      # uri = URI("https://stats.look.io/render/?width=586&height=308&_salt=1434573360.489&from=00%3A00_20150617&until=23%3A59_20150617&target=stats_counts.property.Web.0363eef2.funnel.1&format=json")
+      Net::HTTP.start(uri.host, uri.port,
+                      :use_ssl => uri.scheme == 'https',
+                      :verify_mode => OpenSSL::SSL::VERIFY_NONE) do |http|
 
-      request = Net::HTTP::Get.new uri.request_uri
-      request.basic_auth 'lookio', 'look@uthere'
+        request = Net::HTTP::Get.new uri.request_uri
+        request.basic_auth 'lookio', 'look@uthere'
 
-      response = http.request request
+        response = http.request request
 
-      puts response
-      puts response.body
-      @account = response.body
-      return @account
+        # return response.body
+        json = JSON.parse(response.body)
+        self.parseJson json
+
     end
   end
+
+  def self.parseJson json
+    accounts = []
+    json.each do |i|
+      total = 0
+      i['datapoints'].each do |d|
+        if d[0] != nil
+          total += d[0]
+        end
+      end
+      acc = []
+      acc.push(i['target'])
+      acc.push(total)
+      # accounts.push("account: #{i['target']} total: #{total}")
+      accounts.push(acc)
+    end
+    return accounts.sort_by!{|k|k[1]}.reverse!
+  end
+
+  def self.createAccount account
+    total = 0
+    account['datapoints'].each do |d|
+      if d[0] != nil
+        total += d[0]
+        end
+      end
+    puts "account: #{account['target']} total: #{total}"
+  end
+  
+  
 
 end

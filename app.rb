@@ -10,6 +10,11 @@ post '/' do
   puts 'post received' * 10
 end
 
+get '/visit' do
+  @accounts = VisitReporter.getAccounts()
+  erb :visit
+end
+
 
 get '/' do
   erb :home
@@ -71,11 +76,6 @@ def sendPugs pug
   http.request(request)
 
 end
-
-get '/visits' do
-  return VisitReporter.tryAccount
-end
-
 
 get '/demo' do
   erb :demo
