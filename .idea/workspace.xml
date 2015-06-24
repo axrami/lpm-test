@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c72722e5-7894-4d42-963b-4b8812bedae5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/alphatest.erb" afterPath="$PROJECT_DIR$/views/alphatest.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/visit.rb" afterPath="$PROJECT_DIR$/visit.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="lpm-test.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/views/alphatest.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.34922394">
-              <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+              <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -880,12 +878,12 @@
       <workItem from="1434600788599" duration="3270000" />
       <workItem from="1434678170688" duration="7408000" />
       <workItem from="1434986306434" duration="887000" />
-      <workItem from="1435167635229" duration="316000" />
+      <workItem from="1435167635229" duration="328000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75774000" />
+    <option name="totallyTimeSpent" value="75786000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1336,7 +1334,7 @@
     <entry file="file://$PROJECT_DIR$/views/alphatest.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34922394">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
           <folding />
         </state>
       </provider>
