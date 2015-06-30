@@ -55,6 +55,22 @@ get '/apk' do
   erb :apk
 end
 
+get '/agent/?:site?/?:user?/?:password?' do
+  @site = params[:site] || nil
+  @user = params[:user] || nil
+  @password = params[:password] || nil
+  if @site != nil && @user != nil && @password != nil
+    url = URI.parse("http://lpmobile-agent.herokuapp.com/agent/#{@site}/#{@user}/#{@password}");
+    req = Net::HTTP::Get.new(url.to_s)
+    res = Net::HTTP.start(url.host, url.port) {|http|
+    http.request(req)
+    }
+    "logging into #{@user}"
+  else
+    'must enter account user and password'
+  end
+end
+
 get '/pug' do
   url = URI.parse('http://pugme.herokuapp.com/bomb?count=1');
   req = Net::HTTP::Get.new(url.to_s)
