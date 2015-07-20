@@ -301,6 +301,21 @@
         window.location.assign(httpsUrl);
     };
 
+     LPMTest.setLocal = function() {
+         console.log("aaaaa == " + window.LPMobile.URLS.DISPATCH);
+         console.log(window.LPMobile.URLS.DISPATCH + " == https://dispatch.staging.look.io");
+         console.log(window.LPMobile.URLS.DISPATCH == "https://dispatch.staging.look.io")
+        if (window.LPMobile.URLS.DISPATCH == "https://dispatch.staging.look.io") {
+
+            window.LPMobile.URLS.DISPATCH = "balls";
+
+            console.log(window.LPMobile.URLS.DISPATCH);
+            console.log("seturl");
+        } else {
+            window.setTimeout(LPMTest.setLocal, 1);
+        }
+    };
+
     LPMTest.version = function() {
         version = LPMobile.version;
         $('.navbar-brand').append(version);
@@ -311,10 +326,20 @@
         console.log('invitation shown..');
     };
 
+    LPMTest.checkLPMobile = function() {
+        if (window.LPMobile != null) {
+            LPMTest.setLocal();
+        } else {
+            window.setTimeout("LPMTest.checkLPMobile();", 1);
+            console.log("LPMobile not found");
+        }
+
+    };
 
     var init = function() {
         metaView();
         hybrid();
+        LPMTest.checkLPMobile();
     };
 
     var domReady = function() {

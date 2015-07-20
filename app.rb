@@ -20,7 +20,8 @@ get '/' do
   erb :home
 end
 
-get '/alpha' do
+get '/alpha/?:app_id?' do
+  @appId = params[:app_id] || nil
   erb :alphatest
 end
 
@@ -134,6 +135,8 @@ def url_by_env env
     'https://s3.amazonaws.com/lp-qa-html-lib/lp_lib/liveperson-mobile.js'
   elsif env == 'dev'
     'https://s3.amazonaws.com/look-test-html-lib/lp_lib/liveperson-mobile.js'
+  elsif env == 'local'
+    'https://s3.amazonaws.com/look-dev-html-lib/lp_lib/liveperson-mobile.js'
   else
     return nil
   end
@@ -153,6 +156,9 @@ end
 get '/:env/?:app_id?' do
   @appId = params[:app_id] || nil
   @link = url_by_env params[:env]
+  if params[:env] == 'local'
+    @local = true
+  end
   if is_mobile and @link != nil
     erb :index
   elsif @link != nil

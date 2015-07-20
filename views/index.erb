@@ -15,6 +15,10 @@
     <% padding = "<style> .home-page {padding-left: 400px; padding-right: 400px;} </style>" %>
     <%= padding %>
   <% end %>
+
+    <% if @local %>
+        <script>  </script>
+    <% end %>
 </head>
 
 <body>
@@ -54,8 +58,8 @@
           <!-- <li><button id="extras" class="btn btn-default btn-block">Report extras</button></li> -->
           <li><button id="invitation" class="btn btn-default btn-block">Report invitation</button></li>
           <li><button id="def-skill" class="btn btn-default btn-block">Set Default skill</button></li>
-          <li><button id="tog-hybrid" class="btn btn-default btn-block">Toggle Hybrid var</li>
-          <li><button id="lang-override" class="btn btn-default btn-block">Override Language</li>
+          <li><button id="tog-hybrid" class="btn btn-default btn-block">Toggle Hybrid var</button></li>
+          <li><button id="lang-override" class="btn btn-default btn-block">Override Language</button></li>
           <li>
             <div class="btn-group btn-group">
               <button type="button" onclick="LPMTest.httpLink()" class="btn btn-default">HTTP</button>
@@ -88,6 +92,10 @@
                           LPMTest.logEvent(evt);
                         });
                     });
+//                    Terrible idea but thats how
+//                    LPMobile.on('chatEnabled' , function() {
+//                        LPMobile.beginChat();
+//                    });
                     LPMTest.version();
                 },
                 onChatDisabled: function(els) { // An event that fires when chat is disabled. It takes one parameter which is an array of your trigger selectors.
@@ -105,7 +113,8 @@
    
                 extras: function() {
                     return {
-                        "time": Date.now()
+                        "time": Date.now(),
+                        "name": "Andrew"
                     }
 
                 }
