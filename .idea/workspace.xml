@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c72722e5-7894-4d42-963b-4b8812bedae5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.rb" afterPath="$PROJECT_DIR$/app.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/not_found.erb" afterPath="$PROJECT_DIR$/views/not_found.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="lpm-test.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,8 +27,8 @@
       <file leaf-file-name="not_found.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/not_found.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.323496">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.30716723">
+              <caret line="18" column="1956" selection-start-line="18" selection-start-column="1956" selection-end-line="18" selection-end-column="1956" />
               <folding />
             </state>
           </provider>
@@ -91,6 +89,7 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="-1645" />
     <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="1023" />
@@ -863,12 +862,12 @@
       <workItem from="1437490696102" duration="330000" />
       <workItem from="1437496677286" duration="857000" />
       <workItem from="1437569629849" duration="1688000" />
-      <workItem from="1438190539224" duration="523000" />
+      <workItem from="1438190539224" duration="1146000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96983000" />
+    <option name="totallyTimeSpent" value="97606000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -891,7 +890,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="1023" extended-state="6" />
+    <frame x="-1645" y="23" width="1680" height="1023" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1320,8 +1319,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/not_found.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.323496">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.30716723">
+          <caret line="18" column="1956" selection-start-line="18" selection-start-column="1956" selection-end-line="18" selection-end-column="1956" />
           <folding />
         </state>
       </provider>
