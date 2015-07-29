@@ -72,28 +72,6 @@ get '/agent/?:site?/?:user?/?:password?' do
   end
 end
 
-get '/pug' do
-  url = URI.parse('http://pugme.herokuapp.com/bomb?count=1');
-  req = Net::HTTP::Get.new(url.to_s)
-  res = Net::HTTP.start(url.host, url.port) {|http|
-    http.request(req)
-  }
-  pugs = JSON.parse(res.body)
-  pugLink = pugs["pugs"]
-  sendPugs pugLink
-
-end
-
-def sendPugs pug
-  uri = URI.parse("https://hooks.slack.com/services/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")
-  http = Net::HTTP.new(uri.host , uri.port)
-  http.use_ssl = true
-  request = Net::HTTP::Post.new(uri.path , {'Content-type' => 'application/json'})
-  request.body = "{'text': #{pug}}"
-  http.request(request)
-
-end
-
 get '/demo' do
   erb :demo
 end
