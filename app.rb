@@ -10,6 +10,10 @@ post '/' do
   puts 'post received' * 10
 end
 
+get '/loaderio-71e40c60d4930c2cb0cf019b00c53203' do
+  return 'loaderio-71e40c60d4930c2cb0cf019b00c53203'
+end
+
 get '/visit' do
   @accounts = VisitReporter.getAccounts()
   erb :visit
