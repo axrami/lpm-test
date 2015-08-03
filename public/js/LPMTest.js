@@ -325,21 +325,21 @@
         LPMobile.setInvitationShown();
         console.log('invitation shown..');
     };
-
-    LPMTest.checkLPMobile = function() {
-        if (window.LPMobile != null) {
-            LPMTest.setLocal();
-        } else {
-            window.setTimeout("LPMTest.checkLPMobile();", 1);
-            console.log("LPMobile not found");
-        }
-
-    };
+    //
+    //LPMTest.checkLPMobile = function() {
+    //    if (window.LPMobile != null) {
+    //        LPMTest.setLocal();
+    //    } else {
+    //        window.setTimeout("LPMTest.checkLPMobile();", 1);
+    //        console.log("LPMobile not found");
+    //    }
+    //
+    //};
 
     var init = function() {
         metaView();
         hybrid();
-        LPMTest.checkLPMobile();
+        //LPMTest.checkLPMobile();
     };
 
     var domReady = function() {
