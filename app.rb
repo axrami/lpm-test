@@ -124,6 +124,16 @@ def url_by_env env
   end
 end
 
+def get_custom_version env, version
+  if env == 'staging'
+    "https://s3.amazonaws.com/look-dev-html-lib/v.1.6.#{version}/lp_lib/liveperson-mobile.js"
+  elsif env == 'production'
+    "https://s3.amazonaws.com/lookio-html-lib/v.1.6.#{version}/lp_lib/liveperson-mobile.js"
+  end
+
+end
+
+
 def is_mobile
   mobile_regex = /iPhone|iPad|Android/
   matches_mobile = request.env["HTTP_USER_AGENT"] =~ mobile_regex
@@ -135,17 +145,24 @@ def is_mobile
 
 end
 
-get '/v/?:version?/?:app_id?' do
-  @appId = params[:app_id] || nil
-  @version = params[:version] || nil
-  if is_mobile
-    erb :index
-  end
-end
+# get '/v/?:version?/?:app_id?' do
+#   @appId = params[:app_id] || nil
+#   @version = params[:version] || nil
+#
+#   if is_mobile
+#     erb :index
+#   end
+# end
 
 get '/:env/?:app_id?' do
   @appId = params[:app_id] || nil
-  @link = url_by_env params[:env]
+  @version = params[:version] || nil
+  puts @version
+  if @version != nil
+    @link = get_custom_version params[:env], @version
+  else
+    @link = url_by_env params[:env]
+  end
   if params[:env] == 'local'
     @local = true
   end
