@@ -114,7 +114,7 @@ def url_by_env env
   elsif env == 'tag'
     'https://tag.look.io/lp_lib/liveperson-mobile.js'
   elsif env == 'qa'
-    'https://s3.amazonaws.com/look-dev-html-lib/v.1.6.206/lp_lib/liveperson-mobile.js'
+    'https://s3.amazonaws.com/lookio-html-lib/v.1.6.203/lp_lib/liveperson-mobile.js'
   elsif env == 'dev'
     'https://s3.amazonaws.com/look-test-html-lib/lp_lib/liveperson-mobile.js'
   elsif env == 'local'
@@ -133,6 +133,14 @@ def is_mobile
     return false
   end
 
+end
+
+get '/v/?:version?/?:app_id?' do
+  @appId = params[:app_id] || nil
+  @version = params[:version] || nil
+  if is_mobile
+    erb :index
+  end
 end
 
 get '/:env/?:app_id?' do
