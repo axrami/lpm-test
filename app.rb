@@ -114,7 +114,7 @@ def url_by_env env
   elsif env == 'tag'
     'https://tag.look.io/lp_lib/liveperson-mobile.js'
   elsif env == 'qa'
-    'https://s3.amazonaws.com/lp-qa-html-lib/lp_lib/liveperson-mobile.js'
+    'https://s3.amazonaws.com/look-dev-html-lib/v.1.6.206/lp_lib/liveperson-mobile.js'
   elsif env == 'dev'
     'https://s3.amazonaws.com/look-test-html-lib/lp_lib/liveperson-mobile.js'
   elsif env == 'local'
