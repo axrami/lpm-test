@@ -145,27 +145,20 @@ def is_mobile
 
 end
 
-# get '/v/?:version?/?:app_id?' do
-#   @appId = params[:app_id] || nil
-#   @version = params[:version] || nil
-#
-#   if is_mobile
-#     erb :index
-#   end
-# end
-
 get '/:env/?:app_id?' do
   @appId = params[:app_id] || nil
   @version = params[:version] || nil
-  puts @version
+
   if @version != nil
     @link = get_custom_version params[:env], @version
   else
     @link = url_by_env params[:env]
   end
+
   if params[:env] == 'local'
     @local = true
   end
+
   if is_mobile and @link != nil
     erb :index
   elsif @link != nil
