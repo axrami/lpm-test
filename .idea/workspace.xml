@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c72722e5-7894-4d42-963b-4b8812bedae5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/alphatest.erb" afterPath="$PROJECT_DIR$/views/alphatest.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="c72722e5-7894-4d42-963b-4b8812bedae5" name="Default" comment="" />
     <ignored path="lpm-test.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -48,8 +45,8 @@
       <file leaf-file-name="alphatest.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/alphatest.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42372882">
-              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.33898306">
+              <caret line="14" column="1105" selection-start-line="14" selection-start-column="1105" selection-end-line="14" selection-end-column="1105" />
               <folding />
             </state>
           </provider>
@@ -895,12 +892,12 @@
       <workItem from="1439234593257" duration="1689000" />
       <workItem from="1439302701652" duration="116000" />
       <workItem from="1439321997862" duration="1342000" />
-      <workItem from="1439409428927" duration="40000" />
+      <workItem from="1439409428927" duration="505000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107737000" />
+    <option name="totallyTimeSpent" value="108202000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1342,8 +1339,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/alphatest.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42372882">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.33898306">
+          <caret line="14" column="1105" selection-start-line="14" selection-start-column="1105" selection-end-line="14" selection-end-column="1105" />
           <folding />
         </state>
       </provider>
