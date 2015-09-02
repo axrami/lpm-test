@@ -19,6 +19,9 @@ get '/visit' do
   erb :visit
 end
 
+get '/something' do
+  return "askjflajksfjlsadkfasfjslf/"
+end
 
 get '/' do
   erb :home
