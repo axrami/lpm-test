@@ -6,8 +6,12 @@ require 'pp'
 require 'net/http'
 require 'uri'
 
-post '/' do
-  puts 'post received' * 10
+post '/test-result' do
+  request.body.rewind
+  @request_payload = JSON.parse request.body.read
+  out_file = File.new("views/test_results/test.erb", "w")
+  out_file.puts(@request_payload)
+  out_file.close
 end
 
 get '/loaderio-71e40c60d4930c2cb0cf019b00c53203/' do
@@ -42,6 +46,10 @@ end
 
 get '/automation' do
   erb :automation
+end
+
+post '/automation' do
+  puts 'post received'
 end
 
 get '/event/?:app_id?' do
