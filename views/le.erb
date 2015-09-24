@@ -29,6 +29,15 @@
             </div>
         </div>
     </nav>
+      <div id="demo" class="collapse">
+    <div class="jumbotron">
+      <ul id="url-list" class="settings-wrapper">
+          <li id="dispatch"></li>
+          <li>app id: <%= @appId %></li>
+          <li>environment: <%= @env %></li>
+      </ul>
+    </div>
+  </div>
 
     <div class="home-page app">
 
@@ -133,7 +142,7 @@
 <script language="javascript">
 	<!-- BEGIN LivePerson Monitor. -->
 	window.lpTag=window.lpTag||{};if(typeof window.lpTag._tagCount==='undefined'){
-	window.lpTag={site:'33326950',section:lpTag.section||'',autoStart:lpTag.autoStart===false?false:true,ovr:lpTag.ovr||{domain : 'lptag-a.liveperson.net',tagjs : 'tags-a.liveperson.net'},_v:'1.5.1',_tagCount:1,protocol:location.protocol,events:{bind:function(app,ev,fn){lpTag.defer(function(){lpTag.events.bind(app,ev,fn);},0);},trigger:function(app,ev,json){lpTag.defer(function(){lpTag.events.trigger(app,ev,json);},1);}},defer:function(fn,fnType){if(fnType==0){this._defB=this._defB||[];this._defB.push(fn);}else if(fnType==1){this._defT=this._defT||[];this._defT.push(fn);}else{this._defL=this._defL||[];this._defL.push(fn);}},load:function(src,chr,id){var t=this;setTimeout(function(){t._load(src,chr,id);},0);},_load:function(src,chr,id){var url=src;if(!src){url=this.protocol+'//'+((this.ovr&&this.ovr.domain)?this.ovr.domain:'lptag.liveperson.net')+'/tag/tag.js?site='+this.site;}var s=document.createElement('script');s.setAttribute('charset',chr?chr:'UTF-8');if(id){s.setAttribute('id',id);}s.setAttribute('src',url);document.getElementsByTagName('head').item(0).appendChild(s);},init:function(){this._timing=this._timing||{};this._timing.start=(new Date()).getTime();var that=this;if(window.attachEvent){window.attachEvent('onload',function(){that._domReady('domReady');});}else{window.addEventListener('DOMContentLoaded',function(){that._domReady('contReady');},false);window.addEventListener('load',function(){that._domReady('domReady');},false);}if(typeof(window._lptStop)=='undefined'){this.load();}},start:function(){this.autoStart=true;},_domReady:function(n){if(!this.isDom){this.isDom=true;this.events.trigger('LPT','DOM_READY',{t:n});}this._timing[n]=(new Date()).getTime();},vars:lpTag.vars||[],dbs:lpTag.dbs||[],ctn:lpTag.ctn||[],sdes:lpTag.sdes||[],ev:lpTag.ev||[]};lpTag.init();}else{window.lpTag._tagCount+=1;} </script>
+	window.lpTag={site:'<%= @appId%>',section:lpTag.section||'',autoStart:lpTag.autoStart===false?false:true,ovr:lpTag.ovr||{domain : 'lptag-a.liveperson.net',tagjs : 'tags-a.liveperson.net'},_v:'1.5.1',_tagCount:1,protocol:location.protocol,events:{bind:function(app,ev,fn){lpTag.defer(function(){lpTag.events.bind(app,ev,fn);},0);},trigger:function(app,ev,json){lpTag.defer(function(){lpTag.events.trigger(app,ev,json);},1);}},defer:function(fn,fnType){if(fnType==0){this._defB=this._defB||[];this._defB.push(fn);}else if(fnType==1){this._defT=this._defT||[];this._defT.push(fn);}else{this._defL=this._defL||[];this._defL.push(fn);}},load:function(src,chr,id){var t=this;setTimeout(function(){t._load(src,chr,id);},0);},_load:function(src,chr,id){var url=src;if(!src){url=this.protocol+'//'+((this.ovr&&this.ovr.domain)?this.ovr.domain:'lptag.liveperson.net')+'/tag/tag.js?site='+this.site;}var s=document.createElement('script');s.setAttribute('charset',chr?chr:'UTF-8');if(id){s.setAttribute('id',id);}s.setAttribute('src',url);document.getElementsByTagName('head').item(0).appendChild(s);},init:function(){this._timing=this._timing||{};this._timing.start=(new Date()).getTime();var that=this;if(window.attachEvent){window.attachEvent('onload',function(){that._domReady('domReady');});}else{window.addEventListener('DOMContentLoaded',function(){that._domReady('contReady');},false);window.addEventListener('load',function(){that._domReady('domReady');},false);}if(typeof(window._lptStop)=='undefined'){this.load();}},start:function(){this.autoStart=true;},_domReady:function(n){if(!this.isDom){this.isDom=true;this.events.trigger('LPT','DOM_READY',{t:n});}this._timing[n]=(new Date()).getTime();},vars:lpTag.vars||[],dbs:lpTag.dbs||[],ctn:lpTag.ctn||[],sdes:lpTag.sdes||[],ev:lpTag.ev||[]};lpTag.init();}else{window.lpTag._tagCount+=1;} </script>
 <!-- END LivePerson Monitor. -->
 </script>
 <script language="javascript">
@@ -143,20 +152,25 @@ window.lpTag.taglets.unifiedmonitor = function () {
     function i(i) {
         l = i;
         lpTag.taglets.lp_global_utils.convertConfig(i, p);
-        p.lookioDomain = "s3.amazonaws.com/look-dev-html-lib";
-        p.lookioUrl =
-        <% if @link %>
-              "<%= @link %>";
-            <% else %>
-            "https://" + p.lookioDomain + "/lp_lib/liveperson-mobile.js";
-            <% end %>
+        p.lookioDomain =
+                <% if @link %>
+                    "<%= @link %>";
+                    <% puts "*************#{@link}***************" %>
+                <% else %>
+                "s3.amazonaws.com/look-dev-html-lib";
+                <% end %>
+
+
+
+
+        p.lookioUrl = "https://" + p.lookioDomain + "/lp_lib/liveperson-mobile.js";
 
 
     }
 
     function o() {
         var i = navigator.userAgent;
-        if (i.match(a.ios) || i.match(a.android)) {
+        if (i.match(a.ios) || i.match(a.android) || i.match(a.lpmtest)) {
             "undefined" == typeof window._LP_CFG_ && (window._LP_CFG_ = {});
             "undefined" == typeof window._LP_CFG_.app_id && (window._LP_CFG_.app_id = lpTag.site);
             window._LP_CFG_.tagletConf = p;

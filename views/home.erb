@@ -35,22 +35,23 @@
         function makePage() {
             var appId = document.getElementById("app_id").value;
             var environment = document.getElementById("environment").value;
-            var version = document.getElementById("version").value;
+            var version = document.getElementById("version").value || undefined;
             var unified = document.getElementById("unified-monitor-dropdown").value;
             if (!appId) {
                 alert("app id is requeired");
             } else {
-                if (version) {
-                    var url = "/" + environment + "/" + appId + "?version=" + version;
-                } else if (unified){
-                    var url = "/le/" + environment + "/" + appId;
-                } else if(version && unified) {
+                if (unified === "true" && version) {
                     var url = "/le/" + environment + "/" + appId + "?version=" + version;
+                } else if(unified === "true") {
+                    var url = "/le/" + environment + "/" + appId;
+                } else if (version) {
+                    var url = "/" + environment + "/" + appId + "?version=" + version;
                 } else {
                     var url ="/" + environment + "/" + appId;
                 }
                 window.location.assign(url);
             }
+
         }
     </script>
 </head>
@@ -70,14 +71,14 @@
     <li>
         <span style="font-size:20px;">Use unified monitor</span>
         <select id="unified-monitor-dropdown">
-            <option value=false>no</option>
-            <option value=true>yes</option>
+            <option value="false">no</option>
+            <option value="true">yes</option>
         </select>
     </li>
 </ul>
 <button onclick="makePage()">Create!</button>
 <p>*app id required</p>
 <p>*version not supported in tag environments</p>
-
+<p>* be sure to clear cache</p>
 </body>
 </html>

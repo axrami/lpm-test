@@ -49,22 +49,6 @@ get '/apk' do
   erb :apk
 end
 
-get '/agent/?:site?/?:user?/?:password?' do
-  @site = params[:site] || nil
-  @user = params[:user] || nil
-  @password = params[:password] || nil
-  if @site != nil && @user != nil && @password != nil
-    url = URI.parse("http://lpmobile-agent.herokuapp.com/agent/#{@site}/#{@user}/#{@password}");
-    req = Net::HTTP::Get.new(url.to_s)
-    res = Net::HTTP.start(url.host, url.port) {|http|
-    http.request(req)
-    }
-    "logging into #{@user}"
-  else
-    'must enter account user and password'
-  end
-end
-
 get '/demo' do
   erb :demo
 end
@@ -113,6 +97,8 @@ def url_by_env env
   end
 end
 
+"https://tag.staging.look.io/v.1.6.241/lp_lib/liveperson-mobile.js"
+
 def get_custom_version env, version
   if env == 'staging'
     "https://s3.amazonaws.com/look-dev-html-lib/v.1.6.#{version}/lp_lib/liveperson-mobile.js"
@@ -122,6 +108,19 @@ def get_custom_version env, version
 
 end
 
+def get_domain env
+  if env == 'staging'
+    'tag.staging.look.io'
+    # "s3.amazonaws.com/look-dev-html-lib";
+  elsif env == 'production'
+    'tag.look.io'
+    # "s3.amazonaws.com/lookio-html-lib";
+  end
+end
+
+def addVersion domain, version
+  domain + "/v.1.6.#{version}"
+end
 
 def is_mobile
   mobile_regex = /iPhone|iPad|Android/
@@ -134,14 +133,15 @@ def is_mobile
 
 end
 
-get '/le/?:env?/?:app_id?' do
-  @version = params[:app_id] || nil
+get '/le/:env/?:app_id?' do
+  @version = params[:version] || nil
   @appId = params[:app_id] || nil
-
+  @env = params[:env] || nil
   if @version != nil
-    @link = get_custom_version params[:env], @version
+    domain = get_domain params[:env]
+    @link = addVersion domain, @version
   else
-    @link = url_by_env params[:env]
+    @link = get_domain params[:env]
   end
 
   if is_mobile
@@ -155,7 +155,7 @@ end
 get '/:env/?:app_id?' do
   @appId = params[:app_id] || nil
   @version = params[:version] || nil
-
+  @env = params[:env] || nil
   if @version != nil
     @link = get_custom_version params[:env], @version
   else

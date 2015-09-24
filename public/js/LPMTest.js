@@ -301,24 +301,10 @@
         window.location.assign(httpsUrl);
     };
 
-     LPMTest.setLocal = function() {
-         console.log("aaaaa == " + window.LPMobile.URLS.DISPATCH);
-         console.log(window.LPMobile.URLS.DISPATCH + " == https://dispatch.staging.look.io");
-         console.log(window.LPMobile.URLS.DISPATCH == "https://dispatch.staging.look.io");
-        if (window.LPMobile.URLS.DISPATCH == "https://dispatch.staging.look.io") {
-
-            window.LPMobile.URLS.DISPATCH = "balls";
-
-            console.log(window.LPMobile.URLS.DISPATCH);
-            console.log("seturl");
-        } else {
-            window.setTimeout(LPMTest.setLocal, 1);
-        }
-    };
-
     LPMTest.version = function() {
         version = LPMobile.version;
         $('.navbar-brand').append(version);
+        $( '#dispatch' ).append("Dispatch: " + LPMobile.URLS.DISPATCH);
     };
 
     LPMTest.setInvitationShown = function() {
