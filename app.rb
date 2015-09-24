@@ -97,8 +97,6 @@ def url_by_env env
   end
 end
 
-"https://tag.staging.look.io/v.1.6.241/lp_lib/liveperson-mobile.js"
-
 def get_custom_version env, version
   if env == 'staging'
     "https://s3.amazonaws.com/look-dev-html-lib/v.1.6.#{version}/lp_lib/liveperson-mobile.js"
