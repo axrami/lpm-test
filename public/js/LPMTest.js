@@ -304,7 +304,7 @@
      LPMTest.setLocal = function() {
          console.log("aaaaa == " + window.LPMobile.URLS.DISPATCH);
          console.log(window.LPMobile.URLS.DISPATCH + " == https://dispatch.staging.look.io");
-         console.log(window.LPMobile.URLS.DISPATCH == "https://dispatch.staging.look.io")
+         console.log(window.LPMobile.URLS.DISPATCH == "https://dispatch.staging.look.io");
         if (window.LPMobile.URLS.DISPATCH == "https://dispatch.staging.look.io") {
 
             window.LPMobile.URLS.DISPATCH = "balls";

@@ -2,36 +2,63 @@
 <html lang="en">
 
 <head>
-  <title>Demo</title>
-  <meta name='viewport' content='user-scalable=0, width=device-width, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0'>
+    <title>Demo</title>
+    <meta name='viewport' content='user-scalable=0, width=device-width, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0'>
+    <style>
+        button {
+            width: 100%;
+            height: 30px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            padding: 10px;
+            align-content: center;
+        }
+
+        input, select {
+            border: 1px;
+            height: 50px;
+            font-size: 14pt;
+            width: 100%;
+
+        }
+    </style>
+    <script>
+        function makePage() {
+            var appId = document.getElementById("app_id").value;
+            var environment = document.getElementById("environment").value;
+            var version = document.getElementById("version").value;
+            if (!appId) {
+                alert("app id is requeired");
+            } else {
+                if (version) {
+                    var url = "/" + environment + "/" + appId + "?version=" + version;
+                } else {
+                    var url ="/" + environment + "/" + appId;
+                }
+                window.location.assign(url);
+            }
+        }
+
+    </script>
 </head>
-
-<body style="padding: 20px">
-<h1>LPMobile Test Page</h1>
-<hr>
-<h4>To reach the test page enter domain /environment/account</h4>
-<p> <b>Must be visited by a mobile device or emulated in broswer to view page </b></p>
-<p> availible environments </p>
+<body>
+<h1>LPMobile Demo</h1>
 <ul>
-  <li> /qa </li>
-  <li> /staging </li>
-  <li> /produciton </li>
-  <li> /tagstaging </li>
-  <li> /tag </li>
+    <li><input id="app_id" placeholder="App ID"/></li>
+    <li>
+        <select id="environment">
+            <option value="staging">staging</option>
+            <option value="production">production</option>
+        </select>
+    </li>
+    <li><input id="version" placeholder="lib version"/></li>
 </ul>
-
-<h4>Android APK Downloads</h4>
-<ul>
-	<a href="/apk"><li>apk page </li></a>
-</ul>
-<h4>Demo page</h4>
-<ul>
-	<a href="http://safe-cliffs-3429.herokuapp.com/demo"><li>Demo</li></a>
-</ul>
-<h4> SSO Endpoints </h4>
-<p> account P36511428 is the only account supported with this domain login infor sso/sso </p>
-<p> use domain name /sso</p>
-<p> Valid key end point https://safe-cliffs-3429.herokuapp.com/sso/genValidKey?response_type=json </p>
-<p> Invalid endpoint https://safe-cliffs-3429.herokuapp.com/sso/genkey?response_type=json </p>
+<button onclick="makePage()">Create!</button>
+<p>*app id required</p>
 </body>
 </html>

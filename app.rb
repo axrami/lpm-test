@@ -1,30 +1,22 @@
 require 'sinatra'
+require 'sinatra/activerecord'
 require_relative 'sso.rb'
 require_relative 'visit.rb'
 require 'json'
 require 'pp'
 require 'net/http'
-require 'uri'
 
 post '/test-result' do
   request.body.rewind
   @request_payload = JSON.parse request.body.read
-  out_file = File.new("views/test_results/test.erb", "w")
+  out_file = File.new("views/test_results/#{Time.now.utc.iso8601}.txt", "w")
   out_file.puts(@request_payload)
   out_file.close
-end
-
-get '/loaderio-71e40c60d4930c2cb0cf019b00c53203/' do
-  return 'loaderio-71e40c60d4930c2cb0cf019b00c53203'
 end
 
 get '/visit' do
   @accounts = VisitReporter.getAccounts()
   erb :visit
-end
-
-get '/something' do
-  return "askjflajksfjlsadkfasfjslf/"
 end
 
 get '/' do
@@ -34,10 +26,6 @@ end
 get '/alpha/?:app_id?' do
   @appId = params[:app_id] || nil
   erb :alphatest
-end
-
-get '/var' do
-  erb :var
 end
 
 get '/webconnect' do
