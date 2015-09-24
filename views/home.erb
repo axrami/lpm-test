@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <title>Demo</title>
     <meta name='viewport' content='user-scalable=0, width=device-width, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0'>
     <style>
         button {
+            margin-top: 25px;
             width: 100%;
             height: 30px;
         }
@@ -24,7 +24,11 @@
             height: 50px;
             font-size: 14pt;
             width: 100%;
+        }
 
+        #unified-monitor-dropdown {
+            width: 30%;
+            float: right;
         }
     </style>
     <script>
@@ -32,18 +36,22 @@
             var appId = document.getElementById("app_id").value;
             var environment = document.getElementById("environment").value;
             var version = document.getElementById("version").value;
+            var unified = document.getElementById("unified-monitor-dropdown").value;
             if (!appId) {
                 alert("app id is requeired");
             } else {
                 if (version) {
                     var url = "/" + environment + "/" + appId + "?version=" + version;
+                } else if (unified){
+                    var url = "/le/" + environment + "/" + appId;
+                } else if(version && unified) {
+                    var url = "/le/" + environment + "/" + appId + "?version=" + version;
                 } else {
                     var url ="/" + environment + "/" + appId;
                 }
                 window.location.assign(url);
             }
         }
-
     </script>
 </head>
 <body>
@@ -54,11 +62,22 @@
         <select id="environment">
             <option value="staging">staging</option>
             <option value="production">production</option>
+            <option value="tag">tag production</option>
+            <option value="tagstaging">tag staging</option>
         </select>
     </li>
     <li><input id="version" placeholder="lib version"/></li>
+    <li>
+        <span style="font-size:20px;">Use unified monitor</span>
+        <select id="unified-monitor-dropdown">
+            <option value=false>no</option>
+            <option value=true>yes</option>
+        </select>
+    </li>
 </ul>
 <button onclick="makePage()">Create!</button>
 <p>*app id required</p>
+<p>*version not supported in tag environments</p>
+
 </body>
 </html>

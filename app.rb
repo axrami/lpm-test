@@ -45,16 +45,6 @@ get '/event/?:app_id?' do
   erb :event
 end
 
-get '/le/?:app_id?' do
-  @appId = params[:app_id] || nil
-  if is_mobile
-    erb :le
-  else
-    @desktop = true
-    erb :le
-  end
-end
-
 get '/apk' do
   erb :apk
 end
@@ -142,6 +132,24 @@ def is_mobile
     return false
   end
 
+end
+
+get '/le/?:env?/?:app_id?' do
+  @version = params[:app_id] || nil
+  @appId = params[:app_id] || nil
+
+  if @version != nil
+    @link = get_custom_version params[:env], @version
+  else
+    @link = url_by_env params[:env]
+  end
+
+  if is_mobile
+    erb :le
+  else
+    @desktop = true
+    erb :le
+  end
 end
 
 get '/:env/?:app_id?' do

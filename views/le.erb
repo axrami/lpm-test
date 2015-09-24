@@ -128,102 +128,75 @@
                 }
             }
         };
+</script>
+    <!-- BEGIN LivePerson Monitor. -->
+<script language="javascript">
+	<!-- BEGIN LivePerson Monitor. -->
+	window.lpTag=window.lpTag||{};if(typeof window.lpTag._tagCount==='undefined'){
+	window.lpTag={site:'33326950',section:lpTag.section||'',autoStart:lpTag.autoStart===false?false:true,ovr:lpTag.ovr||{domain : 'lptag-a.liveperson.net',tagjs : 'tags-a.liveperson.net'},_v:'1.5.1',_tagCount:1,protocol:location.protocol,events:{bind:function(app,ev,fn){lpTag.defer(function(){lpTag.events.bind(app,ev,fn);},0);},trigger:function(app,ev,json){lpTag.defer(function(){lpTag.events.trigger(app,ev,json);},1);}},defer:function(fn,fnType){if(fnType==0){this._defB=this._defB||[];this._defB.push(fn);}else if(fnType==1){this._defT=this._defT||[];this._defT.push(fn);}else{this._defL=this._defL||[];this._defL.push(fn);}},load:function(src,chr,id){var t=this;setTimeout(function(){t._load(src,chr,id);},0);},_load:function(src,chr,id){var url=src;if(!src){url=this.protocol+'//'+((this.ovr&&this.ovr.domain)?this.ovr.domain:'lptag.liveperson.net')+'/tag/tag.js?site='+this.site;}var s=document.createElement('script');s.setAttribute('charset',chr?chr:'UTF-8');if(id){s.setAttribute('id',id);}s.setAttribute('src',url);document.getElementsByTagName('head').item(0).appendChild(s);},init:function(){this._timing=this._timing||{};this._timing.start=(new Date()).getTime();var that=this;if(window.attachEvent){window.attachEvent('onload',function(){that._domReady('domReady');});}else{window.addEventListener('DOMContentLoaded',function(){that._domReady('contReady');},false);window.addEventListener('load',function(){that._domReady('domReady');},false);}if(typeof(window._lptStop)=='undefined'){this.load();}},start:function(){this.autoStart=true;},_domReady:function(n){if(!this.isDom){this.isDom=true;this.events.trigger('LPT','DOM_READY',{t:n});}this._timing[n]=(new Date()).getTime();},vars:lpTag.vars||[],dbs:lpTag.dbs||[],ctn:lpTag.ctn||[],sdes:lpTag.sdes||[],ev:lpTag.ev||[]};lpTag.init();}else{window.lpTag._tagCount+=1;} </script>
+<!-- END LivePerson Monitor. -->
+</script>
+<script language="javascript">
+window.lpTag = window.lpTag || {};
+lpTag.taglets = lpTag.taglets || {};
+window.lpTag.taglets.unifiedmonitor = function () {
+    function i(i) {
+        l = i;
+        lpTag.taglets.lp_global_utils.convertConfig(i, p);
+        p.lookioDomain = "s3.amazonaws.com/look-dev-html-lib";
+        p.lookioUrl =
+        <% if @link %>
+              "<%= @link %>";
+            <% else %>
+            "https://" + p.lookioDomain + "/lp_lib/liveperson-mobile.js";
+            <% end %>
 
-        <!-- BEGIN LivePerson Monitor. -->
-        window.lpTag = window.lpTag || {};
-        if (typeof window.lpTag._tagCount === 'undefined') {
-            window.lpTag = {
-                site: '88310325' || '',
-                section: lpTag.section || '',
-                autoStart: lpTag.autoStart === false ? false : true,
-                ovr: lpTag.ovr || {},
-                _v: '1.5.1',
-                _tagCount: 1,
-                protocol: location.protocol,
-                events: {
-                    bind: function (app, ev, fn) {
-                        lpTag.defer(function () {
-                            lpTag.events.bind(app, ev, fn);
-                        }, 0);
-                    }, trigger: function (app, ev, json) {
-                        lpTag.defer(function () {
-                            lpTag.events.trigger(app, ev, json);
-                        }, 1);
-                    }
-                },
-                defer: function (fn, fnType) {
-                    if (fnType == 0) {
-                        this._defB = this._defB || [];
-                        this._defB.push(fn);
-                    } else if (fnType == 1) {
-                        this._defT = this._defT || [];
-                        this._defT.push(fn);
-                    } else {
-                        this._defL = this._defL || [];
-                        this._defL.push(fn);
-                    }
-                },
-                load: function (src, chr, id) {
-                    var t = this;
-                    setTimeout(function () {
-                        t._load(src, chr, id);
-                    }, 0);
-                },
-                _load: function (src, chr, id) {
-                    var url = src;
-                    if (!src) {
-                        url = this.protocol + '//' + ((this.ovr && this.ovr.domain) ? this.ovr.domain : 'lptag.liveperson.net') + '/tag/tag.js?site=' + this.site;
-                    }
-                    var s = document.createElement('script');
-                    s.setAttribute('charset', chr ? chr : 'UTF-8');
-                    if (id) {
-                        s.setAttribute('id', id);
-                    }
-                    s.setAttribute('src', url);
-                    document.getElementsByTagName('head').item(0).appendChild(s);
-                },
-                init: function () {
-                    this._timing = this._timing || {};
-                    this._timing.start = (new Date()).getTime();
-                    var that = this;
-                    if (window.attachEvent) {
-                        window.attachEvent('onload', function () {
-                            that._domReady('domReady');
-                        });
-                    } else {
-                        window.addEventListener('DOMContentLoaded', function () {
-                            that._domReady('contReady');
-                        }, false);
-                        window.addEventListener('load', function () {
-                            that._domReady('domReady');
-                        }, false);
-                    }
-                    if (typeof(window._lptStop) == 'undefined') {
-                        this.load();
-                    }
-                },
-                start: function () {
-                    this.autoStart = true;
-                },
-                _domReady: function (n) {
-                    if (!this.isDom) {
-                        this.isDom = true;
-                        this.events.trigger('LPT', 'DOM_READY', {t: n});
-                    }
-                    this._timing[n] = (new Date()).getTime();
-                },
-                vars: lpTag.vars || [],
-                dbs: lpTag.dbs || [],
-                ctn: lpTag.ctn || [],
-                sdes: lpTag.sdes || [],
-                ev: lpTag.ev || []
+
+    }
+
+    function o() {
+        var i = navigator.userAgent;
+        if (i.match(a.ios) || i.match(a.android)) {
+            "undefined" == typeof window._LP_CFG_ && (window._LP_CFG_ = {});
+            "undefined" == typeof window._LP_CFG_.app_id && (window._LP_CFG_.app_id = lpTag.site);
+            window._LP_CFG_.tagletConf = p;
+            window.lpAddMobileTag = function () {
+                var i = document.createElement("script");
+                _LP_CFG_.lpjsid = i.id = "lpmobile-js-tag";
+                i.type = "text/javascript";
+                i.async = !0;
+                i.src = p.lookioUrl;
+                document.body.appendChild(i)
             };
-            lpTag.init();
+            lpTag.isDom ? lpAddMobileTag() : lpTag.events.bind("LPT", "DOM_READY", lpAddMobileTag)
         } else {
-            window.lpTag._tagCount += 1;
-        } </script>
-    <!-- END LivePerson Monitor. -->
+            "undefined" == typeof lpMTagConfig && (window.lpMTagConfig = {});
+            lpMTagConfig.lpServer = lpTag.getDomain("LPMONITOR");
+            lpMTagConfig.lpNumber = lpTag.site;
+            lpMTagConfig.lpProtocol = lpTag.protocol.replace(":", "");
+            lpTag.taglets.lp_global_utils.convertConfig(l, lpMTagConfig);
+            window.lpAddMonitorTag = function (i) {
+                if ("undefined" == typeof i || "object" == typeof i)if ("undefined" == typeof lpMTagConfig.pluginSys || lpMTagConfig.pluginsLoaded)i = lpMTagConfig.lpMTagSrc ? lpMTagConfig.lpMTagSrc : "/hcp/html/mTag.js"; else {
+                    i = lpMTagConfig.pluginSys;
+                    lpMTagConfig.pluginsLoaded = !0
+                }
+                if (0 != i.indexOf("http"))i = lpMTagConfig.lpProtocol + "://" + lpMTagConfig.lpServer + i + "?site=" + lpMTagConfig.lpNumber; else if (i.indexOf("site=") < 0) {
+                    i += i.indexOf("?") < 0 ? "?" : "&";
+                    i = i + "site=" + lpMTagConfig.lpNumber
+                }
+                lpTag.load(i, "iso-8859-1")
+            };
+            lpTag.isDom ? lpAddMonitorTag() : lpTag.events.bind("LPT", "DOM_READY", lpAddMonitorTag)
+        }
+    }
 
+    var l, n = 1.7, e = "unifiedmonitor", a = {
+        ios: /(iPhone|iPod|iPad).*([4|5|6|7|8|9]_\d+(?:_\d)?)\s+/i, // iOS Devices 4.x+
+android: /(Android)\s+((?:2\.[3-9]|4\.\d+|5\.\d+)(?:-update\d+)?(?:\.\d+)?);+/i // Android Devices 2.3+ and 4.x
+    }, p = {};
+    return {v: n, name: e, init: i, start: o}
+}();
+</script>
 </div>
 </body>
 
