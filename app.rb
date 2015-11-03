@@ -36,6 +36,10 @@ get '/automation' do
   erb :automation
 end
 
+get '/results' do
+  erb :results
+end
+
 post '/automation' do
   puts 'post received'
 end
@@ -87,7 +91,7 @@ def url_by_env env
   elsif env == 'tag'
     'https://tag.look.io/lp_lib/liveperson-mobile.js'
   elsif env == 'qa'
-    'https://s3.amazonaws.com/lookio-html-lib/v.1.6.203/lp_lib/liveperson-mobile.js'
+    'https://dispatch.qa.liveperson.io/lp_lib/liveperson-mobile.js'
   elsif env == 'dev'
     'https://s3.amazonaws.com/look-test-html-lib/lp_lib/liveperson-mobile.js'
   elsif env == 'local'
