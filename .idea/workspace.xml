@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c72722e5-7894-4d42-963b-4b8812bedae5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.rb" afterPath="$PROJECT_DIR$/app.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/reporter.js" afterPath="$PROJECT_DIR$/public/js/reporter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="lpm-test.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,11 +25,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="reporter.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="reporter.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/reporter.js">
           <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6280992">
+              <caret line="95" column="64" selection-start-line="95" selection-start-column="64" selection-end-line="95" selection-end-column="64" />
+              <folding>
+                <marker date="1446614101000" expanded="true" signature="2372:2383" placeholder="..." />
+                <marker date="1446614101000" expanded="true" signature="2372:2385" placeholder="..." />
+                <marker date="1446614101000" expanded="true" signature="2372:2403" placeholder="..." />
+                <marker date="1446614101000" expanded="true" signature="2478:2489" placeholder="..." />
+                <marker date="1446614101000" expanded="true" signature="2478:2505" placeholder="..." />
+                <marker date="1446614101000" expanded="true" signature="2478:2508" placeholder="..." />
+                <marker date="1446614101000" expanded="true" signature="2586:2618" placeholder="..." />
+                <marker date="1446614101000" expanded="true" signature="2697:2706" placeholder="..." />
+                <marker date="1446614101000" expanded="true" signature="2697:2708" placeholder="..." />
+                <marker date="1446614101000" expanded="true" signature="2697:2725" placeholder="..." />
+                <marker date="1446614101000" expanded="true" signature="2801:2811" placeholder="..." />
+                <marker date="1446614101000" expanded="true" signature="2801:2830" placeholder="..." />
+                <marker date="1446614101000" expanded="true" signature="2910:2925" placeholder="..." />
+                <marker date="1446614101000" expanded="true" signature="2910:2944" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reporter.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/css/reporter.css">
+          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+              <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -38,17 +64,17 @@
         <entry file="file://$PROJECT_DIR$/public/js/LPMTest.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="312" column="6" selection-start-line="312" selection-start-column="6" selection-end-line="312" selection-end-column="6" />
+              <caret line="311" column="0" selection-start-line="311" selection-start-column="0" selection-end-line="311" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6652893">
-              <caret line="93" column="76" selection-start-line="93" selection-start-column="76" selection-end-line="93" selection-end-column="76" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="133" column="5" selection-start-line="133" selection-start-column="5" selection-end-line="133" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -103,8 +129,9 @@
         <option value="$PROJECT_DIR$/visit.rb" />
         <option value="$PROJECT_DIR$/views/results.erb" />
         <option value="$PROJECT_DIR$/public/js/resutls.js" />
-        <option value="$PROJECT_DIR$/public/js/reporter.js" />
         <option value="$PROJECT_DIR$/app.rb" />
+        <option value="$PROJECT_DIR$/public/css/reporter.css" />
+        <option value="$PROJECT_DIR$/public/js/reporter.js" />
       </list>
     </option>
   </component>
@@ -156,8 +183,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -208,9 +233,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lpm-test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lpm-test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -232,6 +277,7 @@
     <property name="JavaScriptLanguageLevel" value="ES6" />
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -959,12 +1005,13 @@
       <workItem from="1444846651696" duration="241000" />
       <workItem from="1446513061233" duration="212000" />
       <workItem from="1446565961088" duration="2184000" />
-      <workItem from="1446571674351" duration="5483000" />
+      <workItem from="1446571674351" duration="5760000" />
+      <workItem from="1446597159156" duration="6851000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153085000" />
+    <option name="totallyTimeSpent" value="160213000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1040,13 +1087,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/LPMTest.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1380,10 +1420,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/reporter.js">
+    <entry file="file://$PROJECT_DIR$/app.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+          <caret line="133" column="5" selection-start-line="133" selection-start-column="5" selection-end-line="133" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1391,16 +1431,39 @@
     <entry file="file://$PROJECT_DIR$/public/js/LPMTest.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="312" column="6" selection-start-line="312" selection-start-column="6" selection-end-line="312" selection-end-column="6" />
+          <caret line="311" column="0" selection-start-line="311" selection-start-column="0" selection-end-line="311" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.rb">
+    <entry file="file://$PROJECT_DIR$/public/css/reporter.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6652893">
-          <caret line="93" column="76" selection-start-line="93" selection-start-column="76" selection-end-line="93" selection-end-column="76" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/reporter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6280992">
+          <caret line="95" column="64" selection-start-line="95" selection-start-column="64" selection-end-line="95" selection-end-column="64" />
+          <folding>
+            <marker date="1446614101000" expanded="true" signature="2372:2383" placeholder="..." />
+            <marker date="1446614101000" expanded="true" signature="2372:2385" placeholder="..." />
+            <marker date="1446614101000" expanded="true" signature="2372:2403" placeholder="..." />
+            <marker date="1446614101000" expanded="true" signature="2478:2489" placeholder="..." />
+            <marker date="1446614101000" expanded="true" signature="2478:2505" placeholder="..." />
+            <marker date="1446614101000" expanded="true" signature="2478:2508" placeholder="..." />
+            <marker date="1446614101000" expanded="true" signature="2586:2618" placeholder="..." />
+            <marker date="1446614101000" expanded="true" signature="2697:2706" placeholder="..." />
+            <marker date="1446614101000" expanded="true" signature="2697:2708" placeholder="..." />
+            <marker date="1446614101000" expanded="true" signature="2697:2725" placeholder="..." />
+            <marker date="1446614101000" expanded="true" signature="2801:2811" placeholder="..." />
+            <marker date="1446614101000" expanded="true" signature="2801:2830" placeholder="..." />
+            <marker date="1446614101000" expanded="true" signature="2910:2925" placeholder="..." />
+            <marker date="1446614101000" expanded="true" signature="2910:2944" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
