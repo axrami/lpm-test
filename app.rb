@@ -82,7 +82,9 @@ post '/hello' do
 end
 
 def url_by_env env
-  if env == 'staging'
+  if env == 'staging-vpc'
+    'dispatch-vpc.staging.look.io'
+  elsif env == 'staging'
     'https://s3.amazonaws.com/look-dev-html-lib/lp_lib/liveperson-mobile.js'
   elsif env == 'production'
     'https://d3tpuxked45kzt.cloudfront.net/lp_lib/liveperson-mobile.js'

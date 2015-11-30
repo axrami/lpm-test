@@ -17,7 +17,8 @@ $(function () {
             "<thead>" +
             "   <tr>" +
             "       <td>Request type</td>" +
-            "       <td>responseCode</td>" +
+            "       <td>Response code</td>" +
+            "       <td>App Id</td>" +
             "       <td>Latency</td>" +
             "       <td>url</td>" +
             "</tr>" +
@@ -35,6 +36,7 @@ $(function () {
                 "<tr>" +
                     "<td>"+jsonObj.requestType+"</td>" +
                     "<td>"+jsonObj.responseCode+"</td>" +
+                    "<td>"+jsonObj.appId+"</td>" +
                     "<td>"+jsonObj.latency+"</td>" +
                     "<td>"+jsonObj.url+"</td>" +
                 "</tr>"
