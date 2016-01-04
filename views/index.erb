@@ -2,95 +2,122 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>Test Site</title>
-  <link rel="stylesheet" type="text/css" href="/css/app.css" />
-  <link rel="stylesheet" href="/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/css/my.css" />
-  <link rel="stylesheet" href="/css/demo.css" />
-  <script src="/js/jquery.js"></script>
-  <script src="/js/LPMTest.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <% if @desktop %>
-    <% padding = "<style> .home-page {padding-left: 400px; padding-right: 400px;} </style>" %>
-    <%= padding %>
-  <% end %>
+    <meta charset="utf-8">
+    <title>Test Site</title>
+    <link rel="stylesheet" type="text/css" href="/css/app.css"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/my.css"/>
+    <link rel="stylesheet" href="/css/demo.css"/>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/LPMTest.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <% if @desktop %>
+        <% padding = "<style> .home-page {padding-left: 400px; padding-right: 400px;} </style>" %>
+        <%= padding %>
+    <% end %>
 
     <% if @local %>
-        <script>  </script>
+        <script></script>
     <% end %>
 </head>
 
 <body>
-  <div class="body-wrapper">
-  <nav id="nav" class="navbar" role="navigation">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#" data-toggle="collapse" data-target="#demo">
-          LPMobile
-        </a>
-      </div>
-    </div>
-  </nav>
-  <div id="demo" class="collapse">
-    <div class="jumbotron">
-      <ul class="settings-wrapper">
-          <li id="dispatch"></li>
-          <li>app id: <% @appId %></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="home-page app">
-
-    <div id="slider" class="report-menu-slider hidden"><ul></ul></div>
-
-      <div id="ul-wrapper">
-      </div>
-      <div id="settings-wrapper" class="settings-wrapper">
-        <h4>Settings</h4>
-        <ul>
-          <li><button class="btn btn-default btn-block chat-btn">Chat now!</button></li>
-          <li><button id="tog-meta" class="btn btn-default btn-block">Toggle viewport</button></li>
-          <li><button id="view-port-size" class="btn btn-default btn-block">Viewport Size</button></li>
-          <li><button id="enable" class="btn btn-default btn-block" onclick="LPMTest.lpDisabled()">Chat Enable/Disable</button></li>
-          <li><button id="report-btn" class="btn btn-default btn-block">report event</button></li>
-          <li><button id="progress" class="btn btn-default btn-block">Chat in Progress</button></li>
-          <!-- <li><button id="extras" class="btn btn-default btn-block">Report extras</button></li> -->
-          <li><button id="invitation" class="btn btn-default btn-block">Report invitation</button></li>
-          <li><button id="def-skill" class="btn btn-default btn-block">Set Default skill</button></li>
-          <li><button id="tog-hybrid" class="btn btn-default btn-block">Toggle Hybrid var</button></li>
-          <li><button id="lang-override" class="btn btn-default btn-block">Override Language</button></li>
-          <li>
-            <div class="btn-group btn-group">
-              <button type="button" onclick="LPMTest.httpLink()" class="btn btn-default">HTTP</button>
-              <button type="button" onclick="LPMTest.httpsLink()" class="btn btn-default">HTTPS</button>
+<div class="body-wrapper">
+    <nav id="nav" class="navbar" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#" data-toggle="collapse" data-target="#demo">
+                    LPMobile
+                </a>
             </div>
-          </li>
-        </ul>
-      </div>
-  </div>
+        </div>
+    </nav>
+    <div id="demo" class="collapse">
+        <div class="jumbotron">
+            <ul class="settings-wrapper">
+                <li id="dispatch"></li>
+                <li>app id:
+                    <% @appId %></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="home-page app">
+
+        <div id="slider" class="report-menu-slider hidden">
+            <ul></ul>
+        </div>
+
+        <div id="ul-wrapper">
+        </div>
+        <div id="settings-wrapper" class="settings-wrapper">
+            <h4>Settings</h4>
+            <ul>
+                <li>
+                    <button class="btn btn-default btn-block chat-btn">Chat now!</button>
+                </li>
+                <li>
+                    <button class="btn btn-default btn-block" onclick="LPMobile.beginChat()">cht btn <span style="font-size:10px"> avail not maganed by lib</span></button>
+                </li>
+                <li>
+                    <button id="tog-meta" class="btn btn-default btn-block">Toggle viewport</button>
+                </li>
+                <li>
+                    <button id="view-port-size" class="btn btn-default btn-block">Viewport Size</button>
+                </li>
+                <li>
+                    <button id="enable" class="btn btn-default btn-block" onclick="LPMTest.lpDisabled()">Chat
+                        Enable/Disable
+                    </button>
+                </li>
+                <li>
+                    <button id="report-btn" class="btn btn-default btn-block">report event</button>
+                </li>
+                <li>
+                    <button id="progress" class="btn btn-default btn-block">Chat in Progress</button>
+                </li>
+                <!-- <li><button id="extras" class="btn btn-default btn-block">Report extras</button></li> -->
+                <li>
+                    <button id="invitation" class="btn btn-default btn-block">Report invitation</button>
+                </li>
+                <li>
+                    <button id="def-skill" class="btn btn-default btn-block">Set Default skill</button>
+                </li>
+                <li>
+                    <button id="tog-hybrid" class="btn btn-default btn-block">Toggle Hybrid var</button>
+                </li>
+                <li>
+                    <button id="lang-override" class="btn btn-default btn-block">Override Language</button>
+                </li>
+                <li>
+                    <div class="btn-group btn-group">
+                        <button type="button" onclick="LPMTest.httpLink()" class="btn btn-default">HTTP</button>
+                        <button type="button" onclick="LPMTest.httpsLink()" class="btn btn-default">HTTPS</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
     <script type="text/javascript">
         var _LP_CFG_ = {
-            app_id:
-            <% if @appId %>
-              '<%= @appId %>',
+            app_id: <% if @appId %>
+                    '<%= @appId %>',
             <% else %>
-              'P36511428',
+            'P36511428',
             <% end %>
             log_level: 1,
             options: {
                 triggerSelector: '.chat-btn',
                 language: LPMTest.setLang(),
                 chatDisabled: false,
-                onReady: function() {
-                    LPMobile.on('enabledChange', function(data) {
-                      LPMTest.buildPage(data);
+                onReady: function () {
+                    LPMobile.on('enabledChange', function (data) {
+                        LPMTest.buildPage(data);
                         console.log(data);
                     });
-                    LPMTest.events.forEach(function(evt) {
-                        LPMobile.on(evt, function() {
-                          LPMTest.logEvent(evt);
+                    LPMTest.events.forEach(function (evt) {
+                        LPMobile.on(evt, function () {
+                            LPMTest.logEvent(evt);
                         });
                     });
 //                    Terrible idea but thats how
@@ -99,20 +126,20 @@
 //                    });
                     LPMTest.version();
                 },
-                onChatDisabled: function(els) { // An event that fires when chat is disabled. It takes one parameter which is an array of your trigger selectors.
-                  for(var i = 0; i < els.length; i++) {
-                    els[i].style.opacity = .1;
-                  }
-                  LPMTest.logEvent('oldChatDisabled');
+                onChatDisabled: function (els) { // An event that fires when chat is disabled. It takes one parameter which is an array of your trigger selectors.
+                    for (var i = 0; i < els.length; i++) {
+                        els[i].style.opacity = .1;
+                    }
+                    LPMTest.logEvent('oldChatDisabled');
                 },
-                onChatEnabled: function(els) { // An event that fires when chat is enabled. It takes one parameter which is an array of your trigger selectors.
-                  for(var i = 0; i < els.length; i++) {
-                    els[i].style.opacity = 1;
-                  }
-                  LPMTest.logEvent('oldChatEnabled');
+                onChatEnabled: function (els) { // An event that fires when chat is enabled. It takes one parameter which is an array of your trigger selectors.
+                    for (var i = 0; i < els.length; i++) {
+                        els[i].style.opacity = 1;
+                    }
+                    LPMTest.logEvent('oldChatEnabled');
                 },
-   
-                extras: function() {
+
+                extras: function () {
                     return {
                         "time": Date.now(),
                         "name": "Andrew"
@@ -123,24 +150,24 @@
 
         };
 
-        (function() {
+        (function () {
             var a = _LP_CFG_.lpjsid = "lpjs-" + (new Date).getTime(),
-                b = document.createElement("script"),
-                s = document.getElementsByTagName("script")[0];
+                    b = document.createElement("script"),
+                    s = document.getElementsByTagName("script")[0];
             b.id = a;
             b.type = "text/javascript";
             b.async = true;
             b.src =
-            <% if @link %>
-              '<%= @link%>',
-            <% else %>
-              'https://d3tpuxked45kzt.cloudfront.net/lp_lib/liveperson-mobile.js',
-            <% end %>
-            s.parentNode.insertBefore(b, s);
+                    <% if @link %>
+                    '<%= @link%>',
+                    <% else %>
+                    'https://d3tpuxked45kzt.cloudfront.net/lp_lib/liveperson-mobile.js',
+                    <% end %>
+                    s.parentNode.insertBefore(b, s);
         })();
 
     </script>
-  </div>
+</div>
 </body>
 
 </html>
