@@ -6,13 +6,15 @@ require 'json'
 require 'pp'
 require 'net/http'
 
-# set :port, 80
+set :port, 80
 
 
-get '*/*' do
-  @requestPath = request.path_info
-  redirect "http://web-mobile-test.liveperson.io/" + @requestPath
-end
+# for heroku app redirect
+#
+# get '*/*' do
+#   @requestPath = request.path_info
+#   redirect "http://web-mobile-test.liveperson.io/" + @requestPath
+# end
 
 post '/test-result' do
   request.body.rewind
