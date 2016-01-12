@@ -10,7 +10,8 @@ require 'net/http'
 
 
 get '*/*' do
-  redirect "http://web-mobile-test.liveperson.io"
+  @requestPath = request.path_info
+  redirect "http://web-mobile-test.liveperson.io/" + @requestPath
 end
 
 post '/test-result' do
