@@ -1,0 +1,47 @@
+/*#summary {*/
+    /*margin-top: 60px;*/
+/*}*/
+
+#result-table_wrapper {
+    padding: 40px;
+}
+
+#summary-list {
+    /*padding: 20px;*/
+    list-style-type: none;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+#summary-list li {
+    display: inline;
+    font-size: 100%;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+#pass-fail-bar {
+    margin-top: 50px;
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    box-shadow: inset 0 -2px 5px #AAA;
+}
+
+#stats-header {
+    font-size: 200%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+}
+
+#stats-header span {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.navbar {
+    box-shadow: 0 1px 3px #444;
+}

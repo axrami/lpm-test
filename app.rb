@@ -6,6 +6,13 @@ require 'json'
 require 'pp'
 require 'net/http'
 
+# set :port, 80
+
+
+get '*/*' do
+  redirect "http://web-mobile-test.liveperson.io"
+end
+
 post '/test-result' do
   request.body.rewind
   @request_payload = JSON.parse request.body.read

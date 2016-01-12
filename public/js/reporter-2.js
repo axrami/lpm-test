@@ -1,6 +1,8 @@
 $(function () {
     var Reporter = {};
-    var $json = $('#results').data('value'),
+    var $testData = $('#results').data('value'),
+        $json = $testData['test-data'],
+        $testCounterjson = $testData['test-counter'],
         $body = $('body'),
         $resultSummary = $("#results-summary"),
         twoHundred = 0,
@@ -9,7 +11,7 @@ $(function () {
         fiveHundred = 0,
         fourHundredFour = 0,
         latencyAverage = [];
-
+    console.log($testCounterjson);
 
     var buildTable = function () {
         $body.append("<table id='result-table'></table>");
@@ -55,7 +57,7 @@ $(function () {
                             '<span class="icon-bar"></span>' +
                             '<span class="icon-bar"></span>' +
                         '</button>' +
-                        '<a class="navbar-brand" href="#">Test Results</a>' +
+                        '<a class="navbar-brand" href="#">Test Results</span></a>' +
                     '</div>' +
                 '</div>' +
             '</div>'
@@ -63,16 +65,28 @@ $(function () {
     };
 
     var createAveragebar = function() {
-        $resultSummary.append(
+        $('#pass-fail-bar').append(
             "<div id='summary'>" +
                 "<ul id='summary-list'>" +
-                    "<li><span style='color:green; padding-right:8px;'>200</span>"+ twoHundred +"</li>" +
-                    "<li><span style='color:green; padding-right:8px'>201</span>"+ twoHundredOne +"</li>" +
-                    "<li><span style='color:darkred; padding-right:8px'>204</span>"+ twoHundredFour +"</li>" +
-                    "<li><span style='color:red; padding-right:8px'>500</span>"+ fiveHundred +"</li>" +
-                    "<li><span style='color:grey; padding-right:8px'>404</span>"+ fourHundredFour +"</li>" +
-                    "<li><span style='color:cadetblue; padding-right:8px'>latency</span>"+ averageLatency() +"</li>" +
-            "</div>");
+                    "<li><span style='color:green;'>200</span> "+ twoHundred +"</li>" +
+                    "<li><span style='color:green;'>201</span> "+ twoHundredOne +"</li>" +
+                    "<li><span style='color:darkred;'>204</span> "+ twoHundredFour +"</li>" +
+                    "<li><span style='color:red;'>500</span> "+ fiveHundred +"</li>" +
+                    "<li><span style='color:grey;'>404</span> "+ fourHundredFour +"</li>" +
+                    "<li><span style='color:cadetblue;'>latency</span> "+ averageLatency() +"</li>" +
+            "</div>"
+        );
+    };
+
+    var createPassFailBar = function() {
+        $resultSummary.append(
+            "<div id='pass-fail-bar' class='jumbotron'>" +
+                "<div id='stats-header'>" +
+                    "<span>Test Count: " + $testCounterjson['totalTest'] + "</span>" +
+                    "<span style='color:green;'>Passed: " + $testCounterjson['passedTest'] + "</span>" +
+                    "<span style='color:red;'>Failed: " + $testCounterjson['failedTest'] + " </span></div>" +
+            "</div>"
+        );
     };
 
     var parseResponseCodes = function(responseCode) {
@@ -107,6 +121,7 @@ $(function () {
         createNavBar();
         buildTable();
         defineDataTable();
+        createPassFailBar();
         createAveragebar();
     };
 
