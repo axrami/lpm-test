@@ -6,7 +6,7 @@ require 'json'
 require 'pp'
 require 'net/http'
 
-set :port, 80
+# set :port, 80
 
 
 # for heroku app redirect
