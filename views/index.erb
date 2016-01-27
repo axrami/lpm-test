@@ -102,11 +102,16 @@
         var _LP_CFG_ = {
             app_id: <% if @appId %>
                     '<%= @appId %>',
-            <% else %>
-            'P36511428',
-            <% end %>
+                    <% else %>
+                    'P36511428',
+                    <% end %>
             log_level: 1,
             options: {
+                <% if @dispatch %>
+                ovr : {
+                    visitDomain: '<%= @dispatch %>'
+                },
+                <% end %>
                 triggerSelector: '.chat-btn',
                 language: LPMTest.setLang(),
                 chatDisabled: false,

@@ -37,6 +37,7 @@
             var environment = document.getElementById("environment").value;
             var version = document.getElementById("version").value || undefined;
             var unified = document.getElementById("unified-monitor-dropdown").value;
+            var dispatchURL = document.getElementById("dispatch-url").value;
             if (!appId) {
                 alert("app id is requeired");
             } else {
@@ -46,6 +47,8 @@
                     var url = "/le/" + environment + "/" + appId;
                 } else if (version) {
                     var url = "/" + environment + "/" + appId + "?version=" + version;
+                } else if (dispatchURL) {
+                    var url = "/" + environment + "/" + appId + "?dispatch=" +dispatchURL;
                 } else {
                     var url ="/" + environment + "/" + appId;
                 }
@@ -59,6 +62,7 @@
 <h1>LPMobile Demo</h1>
 <ul>
     <li><input id="app_id" placeholder="App ID"/></li>
+    <li><input id="dispatch-url" placeholder="Dispatch Overrride URL"/></li>
     <li>
         <select id="environment">
             <option value="staging">staging</option>

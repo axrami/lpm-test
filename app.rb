@@ -167,6 +167,7 @@ get '/le/:env/?:app_id?' do
 end
 
 get '/:env/?:app_id?' do
+  @dispatch = params[:dispatch] || nil
   @appId = params[:app_id] || nil
   @version = params[:version] || nil
   @env = params[:env] || nil
