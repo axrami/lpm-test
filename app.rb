@@ -11,10 +11,10 @@ require 'net/http'
 
 # for heroku app redirect
 
-get '*/*' do
-  @requestPath = request.path_info
-  redirect "http://web-mobile-test.liveperson.io" + @requestPath
-end
+# get '*/*' do
+#   @requestPath = request.path_info
+#   redirect "http://web-mobile-test.liveperson.io" + @requestPath
+# end
 
 post '/test-result' do
   request.body.rewind
@@ -167,7 +167,7 @@ get '/le/:env/?:app_id?' do
 end
 
 get '/:env/?:app_id?' do
-  @dispatch = params[:dispatch] || nil
+  @domain = params[:domain] || nil
   @appId = params[:app_id] || nil
   @version = params[:version] || nil
   @env = params[:env] || nil

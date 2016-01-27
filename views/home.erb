@@ -37,7 +37,7 @@
             var environment = document.getElementById("environment").value;
             var version = document.getElementById("version").value || undefined;
             var unified = document.getElementById("unified-monitor-dropdown").value;
-            var dispatchURL = document.getElementById("dispatch-url").value;
+            var realtimeDomain = document.getElementById("realtime-domain").value;
             if (!appId) {
                 alert("app id is requeired");
             } else {
@@ -48,7 +48,7 @@
                 } else if (version) {
                     var url = "/" + environment + "/" + appId + "?version=" + version;
                 } else if (dispatchURL) {
-                    var url = "/" + environment + "/" + appId + "?dispatch=" +dispatchURL;
+                    var url = "/" + environment + "/" + appId + "?domain=" + realtimeDomain;
                 } else {
                     var url ="/" + environment + "/" + appId;
                 }
@@ -62,8 +62,10 @@
 <h1>LPMobile Demo</h1>
 <ul>
     <li><input id="app_id" placeholder="App ID"/></li>
-    <li><input id="dispatch-url" placeholder="Dispatch Overrride URL"/></li>
+    <li><input id="realtime-domain" placeholder="Realtime domain"/></li>
+    <li><input id="version" placeholder="lib version"/></li>
     <li>
+        Static content
         <select id="environment">
             <option value="staging">staging</option>
             <option value="production">production</option>
@@ -71,7 +73,6 @@
             <option value="tagstaging">tag staging</option>
         </select>
     </li>
-    <li><input id="version" placeholder="lib version"/></li>
     <li>
         <span style="font-size:20px;">Use unified monitor</span>
         <select id="unified-monitor-dropdown">
