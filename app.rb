@@ -11,10 +11,10 @@ require 'net/http'
 
 # for heroku app redirect
 
-get '*/*' do
-  @requestPath = request.path_info
-  redirect "http://web-mobile-test.liveperson.io" + @requestPath
-end
+# get '*/*' do
+#   @requestPath = request.path_info
+#   redirect "http://web-mobile-test.liveperson.io" + @requestPath
+# end
 
 post '/test-result' do
   request.body.rewind
@@ -179,10 +179,6 @@ get '/:env/?:app_id?' do
     @link = get_custom_version params[:env], @version
   else
     @link = url_by_env params[:env]
-  end
-
-  if params[:env] == 'local'
-    @local = true
   end
 
   if is_mobile and @link != nil

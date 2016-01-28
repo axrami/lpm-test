@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c72722e5-7894-4d42-963b-4b8812bedae5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.erb" afterPath="$PROJECT_DIR$/views/index.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.rb" afterPath="$PROJECT_DIR$/app.rb" />
     </list>
     <ignored path="lpm-test.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,8 +47,8 @@
       <file leaf-file-name="app.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53038675">
-              <caret line="173" column="34" selection-start-line="173" selection-start-column="34" selection-end-line="173" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.7266515">
+              <caret line="183" column="14" selection-start-line="183" selection-start-column="5" selection-end-line="183" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -117,8 +117,8 @@
         <option value="$PROJECT_DIR$/public/css/reporter.css" />
         <option value="$PROJECT_DIR$/public/js/LPMTest.js" />
         <option value="$PROJECT_DIR$/views/home.erb" />
-        <option value="$PROJECT_DIR$/app.rb" />
         <option value="$PROJECT_DIR$/views/index.erb" />
+        <option value="$PROJECT_DIR$/app.rb" />
       </list>
     </option>
   </component>
@@ -1090,12 +1090,12 @@
       <workItem from="1453051635166" duration="195000" />
       <workItem from="1453827654376" duration="241000" />
       <workItem from="1453926277266" duration="5225000" />
-      <workItem from="1453997987969" duration="1074000" />
+      <workItem from="1453997987969" duration="2481000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191295000" />
+    <option name="totallyTimeSpent" value="192702000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1542,8 +1542,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53038675">
-          <caret line="173" column="34" selection-start-line="173" selection-start-column="34" selection-end-line="173" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.7266515">
+          <caret line="183" column="14" selection-start-line="183" selection-start-column="5" selection-end-line="183" selection-end-column="14" />
           <folding />
         </state>
       </provider>
