@@ -107,9 +107,9 @@
                     <% end %>
             log_level: 1,
             options: {
-                <% if @dispatch %>
+                <% if @domain %>
                 ovr : {
-                    visitDomain: '<%= @dispatch %>'
+                    visitDomain: '<%= @domain %>'
                 },
                 <% end %>
                 triggerSelector: '.chat-btn',
