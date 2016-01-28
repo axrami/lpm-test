@@ -108,6 +108,10 @@ def url_by_env env
     'https://s3.amazonaws.com/look-test-html-lib/lp_lib/liveperson-mobile.js'
   elsif env == 'local'
     'https://s3.amazonaws.com/look-dev-html-lib/lp_lib/liveperson-mobile.js'
+  elsif env == 'tagstaging-vpc'
+    'https://tag.staging.liveperson.io/lp_lib/liveperson-mobile.js'
+  elsif env == 'tag-vpc'
+    'https://tag.liveperson.io/lp_lib/liveperson-mobile.js'
   else
     return nil
   end
